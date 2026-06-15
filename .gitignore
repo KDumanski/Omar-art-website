@@ -1,0 +1,16 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# logs
+*.log
+
+# local preview / screenshot output
+.preview/
+*-screenshot*.png
+
+# dependencies (none expected — static site)
+node_modules/

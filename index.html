@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omar Chacón — Painter</title>
+  <meta name="description" content="Omar Chacón is a Colombian-American painter who builds vivid, mosaic-like abstractions from thousands of hand-cast acrylic drips — a brush is never used. Born Bogotá 1979, based in Queens, New York." />
+  <meta name="author" content="Omar Chacón" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#121211" />
+  <link rel="canonical" href="https://omarchaconart.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://omarchaconart.com/" />
+  <meta property="og:site_name" content="Omar Chacón" />
+  <meta property="og:title" content="Omar Chacón — Painter" />
+  <meta property="og:description" content="Thousands of hand-cast acrylic drips, collaged into a global nation of color. A brush is never used." />
+  <meta property="og:image" content="https://omarchaconart.com/assets/paintino-135.jpeg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Omar Chacón — Painter" />
+  <meta name="twitter:description" content="Thousands of hand-cast acrylic drips, collaged into a global nation of color. A brush is never used." />
+  <meta name="twitter:image" content="https://omarchaconart.com/assets/paintino-135.jpeg" />
+
+  <!-- Structured data: the artist as an entity -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VisualArtist",
+    "name": "Omar Chacón",
+    "url": "https://omarchaconart.com/",
+    "image": "https://omarchaconart.com/assets/paintino-135.jpeg",
+    "birthDate": "1979",
+    "birthPlace": { "@type": "Place", "name": "Bogotá, Colombia" },
+    "nationality": ["Colombian", "American"],
+    "jobTitle": "Painter",
+    "description": "Colombian-American painter known for vivid, mosaic-like abstractions built from thousands of hand-cast acrylic drips collaged onto canvas.",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Ringling College of Art and Design" },
+      { "@type": "CollegeOrUniversity", "name": "San Francisco Art Institute" }
+    ],
+    "homeLocation": { "@type": "Place", "name": "Queens, New York" },
+    "sameAs": [
+      "https://www.instagram.com/omarchaconjr/",
+      "https://www.artnet.com/artists/omar-chac%C3%B3n/",
+      "https://www.502.gallery/omar-chacon-artworks"
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!--
+    Google Analytics 4 — inactive until a real Measurement ID is added.
+    Replace G-XXXXXXXXXX below and uncomment to enable.
+  -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+</head>
+<body>
+  <!-- Skip link for keyboard users -->
+  <a href="#top" class="skip-link">Skip to content</a>
+
+  <!-- Branded page loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <span class="loader__mark"></span>
+    <span class="loader__name">Omar&nbsp;Chacón</span>
+  </div>
+
+  <!-- Scroll-spy section dots -->
+  <nav class="spy" id="spy" aria-label="Section navigation">
+    <a href="#top" data-spy="top"><span></span><em>Top</em></a>
+    <a href="#work" data-spy="work"><span></span><em>Work</em></a>
+    <a href="#process" data-spy="process"><span></span><em>Process</em></a>
+    <a href="#about" data-spy="about"><span></span><em>About</em></a>
+    <a href="#exhibitions" data-spy="exhibitions"><span></span><em>Exhibitions</em></a>
+    <a href="#contact" data-spy="contact"><span></span><em>Contact</em></a>
+  </nav>
+
+  <!-- Generative paint-drip field, drawn behind the hero -->
+  <canvas id="drip-field" aria-hidden="true"></canvas>
+
+  <!-- Cursor companion: a single drip that trails the pointer -->
+  <div id="cursor-drip" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__brand">
+      <span class="nav__mark" aria-hidden="true"></span>
+      <span class="nav__name">Omar&nbsp;Chacón</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#exhibitions">Exhibitions</a>
+      <a href="#contact" class="nav__cta">Contact</a>
+    </nav>
+    <button class="nav__theme" id="theme-toggle" aria-label="Toggle light and dark mode">
+      <span class="nav__theme-dot"></span>
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero__inner">
+      <p class="hero__eyebrow reveal">Painter &nbsp;·&nbsp; Bogotá 1979 &nbsp;·&nbsp; New York</p>
+      <h1 class="hero__title">
+        <span class="reveal" style="--d:1">A&nbsp;global&nbsp;nation,</span>
+        <span class="reveal hero__title--accent" style="--d:2">cast in color.</span>
+      </h1>
+      <p class="hero__lede reveal" style="--d:3">
+        Omar Chacón builds his paintings from thousands of hand-cast acrylic
+        drips — each one peeled, sorted, and collaged by hand. A brush is never used.
+      </p>
+      <div class="hero__actions reveal" style="--d:4">
+        <a href="#work" class="btn btn--solid">View the work</a>
+        <a href="#process" class="btn btn--ghost">How it's made</a>
+      </div>
+    </div>
+    <button class="hero__scroll" aria-label="Scroll to work" data-scroll="#work">
+      <span></span>
+    </button>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Acrylic on canvas</span><span class="dot">●</span>
+      <span>A brush is never used</span><span class="dot">●</span>
+      <span>Thousands of drips</span><span class="dot">●</span>
+      <span>Each unit unique</span><span class="dot">●</span>
+      <span>Mestizo color</span><span class="dot">●</span>
+      <span>Acrylic on canvas</span><span class="dot">●</span>
+      <span>A brush is never used</span><span class="dot">●</span>
+      <span>Thousands of drips</span><span class="dot">●</span>
+      <span>Each unit unique</span><span class="dot">●</span>
+      <span>Mestizo color</span><span class="dot">●</span>
+    </div>
+  </div>
+
+  <!-- WORK -->
+  <section class="section work" id="work">
+    <div class="section__head">
+      <p class="section__label reveal">Selected work</p>
+      <h2 class="section__title reveal">The drips, gathered.</h2>
+      <p class="section__intro reveal">
+        Concentric ovals, lozenges, and discs — assembled into dense, jewel-toned
+        fields. Hover any piece to feel it lift off the canvas.
+      </p>
+      <button class="btn btn--ghost work__present reveal" id="enter-exhibition">
+        ⤢&nbsp;&nbsp;Enter exhibition mode
+      </button>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <!-- cards injected by JS, but here as semantic fallback -->
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section process" id="process">
+    <div class="section__head">
+      <p class="section__label reveal">The method</p>
+      <h2 class="section__title reveal">Three days, no brush.</h2>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step__num">01</span>
+        <h3 class="step__title">Pour</h3>
+        <p>Acrylic is poured onto wax paper — thousands of brightly colored ovals, drips, and dots, each one allowed to find its own edge.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step__num">02</span>
+        <h3 class="step__title">Peel</h3>
+        <p>Once dry, every shape is hand-peeled from the paper. Each becomes a unique, pliable "pre-made brushstroke" — no two alike.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step__num">03</span>
+        <h3 class="step__title">Gather</h3>
+        <p>The drips migrate to the canvas and are layered into mosaic-like fields — a social gathering of disparate elements brought into one.</p>
+      </li>
+    </ol>
+
+    <figure class="pullquote reveal">
+      <blockquote>
+        "I liken my works to a social gathering; a global nation comprised of a
+        diverse blend of culturally different peoples, living amongst each other
+        with a sense of unity, yet maintaining individuality — each unit, each
+        drip is unique."
+      </blockquote>
+      <figcaption>— Omar Chacón</figcaption>
+    </figure>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="about__grid">
+      <div class="about__media reveal">
+        <div class="about__frame">
+          <img src="assets/paintino-135.jpeg" alt="Detail of an Omar Chacón painting: concentric acrylic ovals in saturated color" loading="lazy" />
+        </div>
+        <div class="about__stats" id="stats">
+          <div><strong data-count="1979" data-suffix="">1979</strong><span>Born, Bogotá</span></div>
+          <div><strong data-count="0" data-suffix="">0</strong><span>Brushes used</span></div>
+          <div><strong data-count="1000" data-suffix="s">1000s</strong><span>Drips per work</span></div>
+        </div>
+      </div>
+      <div class="about__text">
+        <p class="section__label reveal">About</p>
+        <h2 class="section__title reveal">From Bogotá to a Queens studio.</h2>
+        <p class="reveal">
+          Omar Chacón was born in Bogotá, Colombia in 1979 and moved to the United
+          States with his family in 1989. He earned a BFA from Ringling College of
+          Art and Design in 2002 and an MFA in painting from the San Francisco Art
+          Institute in 2004. He lives and works in Queens, New York.
+        </p>
+        <p class="reveal">
+          His signature method began with a memory: his self-taught grandfather
+          painting small abstract dots. Those dots became colorful lozenges and
+          discs — read as aerial views of people, mixing, multiplying, and taking
+          over the surface. The work draws on the folk art and indigenous textiles
+          of South America and the <em>mestizo</em> fusion of Latin American life,
+          with recent series turning to the imperial purples and golds of Ancient Rome.
+        </p>
+        <p class="reveal">
+          Chacón is represented by Margaret Thatcher Projects (New York),
+          Fouladi Projects (San Francisco), Robischon Gallery (Denver), and
+          Brunnhofer Galerie (Linz, Austria).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXHIBITIONS -->
+  <section class="section exhibitions" id="exhibitions">
+    <div class="section__head">
+      <p class="section__label reveal">Selected exhibitions &amp; honors</p>
+      <h2 class="section__title reveal">A working record.</h2>
+    </div>
+    <ul class="timeline" id="timeline">
+      <li class="reveal"><span class="timeline__year">2025</span><span class="timeline__what"><strong>Color + Clay</strong> — 502 Gallery, Sarasota, FL</span></li>
+      <li class="reveal"><span class="timeline__year">2024</span><span class="timeline__what"><strong>Chromatic Echoes</strong> — Ringling College, Sarasota, FL</span></li>
+      <li class="reveal"><span class="timeline__year">2024</span><span class="timeline__what"><strong>NIMBA</strong> — Robischon Gallery, Denver, CO</span></li>
+      <li class="reveal"><span class="timeline__year">2022</span><span class="timeline__what"><strong>Variaciones Chuecas</strong> — Robischon Gallery, Denver, CO</span></li>
+      <li class="reveal"><span class="timeline__year">2019</span><span class="timeline__what"><strong>Ohio Criollo</strong> — Margaret Thatcher Projects, New York (4th solo)</span></li>
+      <li class="reveal"><span class="timeline__year">2009</span><span class="timeline__what"><strong>Queens International</strong> — Queens Museum of Art, New York</span></li>
+      <li class="reveal"><span class="timeline__year">2008</span><span class="timeline__what"><strong>NYFA Fellowship</strong> — New York Foundation for the Arts</span></li>
+      <li class="reveal"><span class="timeline__year">2008</span><span class="timeline__what"><strong>Sancochos a la Cimabue</strong> — Bronx River Art Center, New York</span></li>
+      <li class="reveal"><span class="timeline__year">2007</span><span class="timeline__what"><strong>William &amp; Dorothy Yeck Award</strong> — National Young Painters Competition</span></li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="contact__inner reveal">
+      <h2 class="contact__title">Let's gather.</h2>
+      <p class="contact__lede">
+        For studio visits, acquisitions, and exhibition inquiries.
+      </p>
+
+      <form class="contact__form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Replace with the artist's Web3Forms access key (free at web3forms.com) -->
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="subject" value="New inquiry from omarchaconart.com" />
+        <input type="hidden" name="from_name" value="Omar Chacón website" />
+        <!-- Honeypot (hidden from people, catches bots) -->
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+
+        <div class="contact__row">
+          <label class="field">
+            <span>Name</span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+        </div>
+        <label class="field">
+          <span>Message</span>
+          <textarea name="message" rows="4" required placeholder="Tell me about the inquiry…"></textarea>
+        </label>
+        <button type="submit" class="btn btn--solid contact__submit">Send inquiry</button>
+        <p class="contact__status" id="contact-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="contact__links">
+        <a class="contact__link" href="https://www.instagram.com/omarchaconjr/" target="_blank" rel="noopener">Instagram&nbsp;↗</a>
+        <a class="contact__link" href="https://www.502.gallery/omar-chacon-artworks" target="_blank" rel="noopener">502&nbsp;Gallery&nbsp;↗</a>
+        <a class="contact__link" href="https://www.artnet.com/artists/omar-chac%C3%B3n/" target="_blank" rel="noopener">Artnet&nbsp;↗</a>
+      </div>
+    </div>
+    <footer class="footer">
+      <span>© <span id="year"></span> Omar Chacón</span>
+      <span class="footer__credit">Every drip, unique.</span>
+    </footer>
+  </section>
+
+  <!-- EXHIBITION MODE — fullscreen one-work-at-a-time slideshow -->
+  <div class="exhibit" id="exhibit" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Exhibition mode">
+    <div class="exhibit__progress"><span id="exhibit-fill"></span></div>
+    <header class="exhibit__bar">
+      <span class="exhibit__brand">Omar&nbsp;Chacón — Exhibition</span>
+      <span class="exhibit__counter" id="exhibit-counter">1 / 5</span>
+      <button class="exhibit__close" id="exhibit-close" aria-label="Exit exhibition">Exit&nbsp;✕</button>
+    </header>
+
+    <button class="exhibit__nav exhibit__nav--prev" id="exhibit-prev" aria-label="Previous work">‹</button>
+    <figure class="exhibit__stage">
+      <img id="exhibit-img" src="" alt="" />
+      <figcaption>
+        <strong id="exhibit-title"></strong>
+        <span id="exhibit-meta"></span>
+      </figcaption>
+    </figure>
+    <button class="exhibit__nav exhibit__nav--next" id="exhibit-next" aria-label="Next work">›</button>
+
+    <div class="exhibit__dots" id="exhibit-dots" aria-hidden="true"></div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Artwork viewer">
+    <button class="lightbox__close" aria-label="Close">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" aria-label="Previous">‹</button>
+    <figure class="lightbox__figure">
+      <img id="lightbox-img" src="" alt="" />
+      <figcaption id="lightbox-cap"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" aria-label="Next">›</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
