@@ -166,10 +166,11 @@
      3. GALLERY — render cards, wire the lightbox
   ---------------------------------------------------------- */
   const WORKS = [
-    { src: 'assets/paintino-135.jpeg', title: 'Untitled Paintino #135', meta: 'Acrylic on canvas · 2007', tag: 'Concentric ovals', status: 'sold' },
-    { src: 'assets/portrait.jpg',      title: 'Mosaico',                meta: 'Acrylic on canvas',        tag: 'Drip mosaic',    status: 'available' },
-    { src: 'assets/work-10.jpg',       title: 'Gathering X',            meta: 'Acrylic on canvas',        tag: 'Hand-cast tiles',status: 'available' },
-    { src: 'assets/work-11.jpg',       title: 'Cirio',                  meta: 'Acrylic on canvas',        tag: 'Peeled drips',   status: 'commissioned' },
+    { src: 'assets/paintino-135.jpeg', title: 'Untitled Painting #135', meta: 'Acrylic on canvas · 2007', tag: 'Concentric ovals', status: 'available' },
+    { src: 'assets/portrait.jpg',      title: 'Invasion 7',             meta: 'Acrylic on canvas · 2024', tag: 'Drip mosaic',    status: 'sold' },
+    { src: 'assets/work-10.jpg',       title: 'Trisco 2',               meta: 'Acrylic on canvas',        tag: 'Hand-cast tiles',status: 'available' },
+    { src: 'assets/work-11.jpg',       title: 'BDPM',                   meta: 'Acrylic on canvas',        tag: 'Peeled drips',   status: 'commissioned' },
+    { src: 'assets/mayoyoque.jpg',     title: 'Mayoyoque CCXXXVII',     meta: 'Acrylic & resin on cast acrylic · 43½ × 31½ in', tag: 'Dashes of color', status: 'available' },
     { src: 'assets/bu-chueco-2018.jpg',title: 'Bu Chueco',             meta: 'Acrylic on paper · 26.5 × 34 in · 2018', tag: 'Columns of color', status: 'available' }
   ];
 
@@ -264,9 +265,17 @@
     reveals.forEach((el) => el.classList.add('is-in'));
   }
 
-  // sticky nav state
+  // sticky nav state + reading-progress bar
   const nav = document.getElementById('nav');
-  const onScroll = () => { if (nav) nav.classList.toggle('is-stuck', window.scrollY > 40); };
+  const progressBar = document.querySelector('#progress-top span');
+  const onScroll = () => {
+    if (nav) nav.classList.toggle('is-stuck', window.scrollY > 40);
+    if (progressBar) {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      progressBar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    }
+  };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
@@ -311,21 +320,26 @@
      6. SCROLL-SPY DOTS
   ---------------------------------------------------------- */
   const spyLinks = Array.from(document.querySelectorAll('.spy a'));
+  const navLinks = Array.from(document.querySelectorAll('.nav__links a'));
   if (spyLinks.length && 'IntersectionObserver' in window) {
     const map = new Map();
     spyLinks.forEach((a) => {
       const sec = document.getElementById(a.dataset.spy);
       if (sec) map.set(sec, a);
     });
+    // track visibility ratios; the most-visible section wins (robust for tall
+    // sections like Work where a high single threshold never fires)
+    const visible = new Map();
+    const setActive = (id) => {
+      spyLinks.forEach((a) => a.classList.toggle('is-active', a.dataset.spy === id));
+      navLinks.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
+    };
     const spyIo = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) {
-          spyLinks.forEach((a) => a.classList.remove('is-active'));
-          const link = map.get(en.target);
-          if (link) link.classList.add('is-active');
-        }
-      });
-    }, { threshold: 0.4, rootMargin: '-20% 0px -40% 0px' });
+      entries.forEach((en) => visible.set(en.target.id, en.intersectionRatio));
+      let best = null, bestRatio = 0;
+      visible.forEach((ratio, id) => { if (ratio > bestRatio) { bestRatio = ratio; best = id; } });
+      if (best && bestRatio > 0) setActive(best);
+    }, { threshold: [0, 0.15, 0.3, 0.5, 0.75, 1], rootMargin: '-15% 0px -35% 0px' });
     map.forEach((_, sec) => spyIo.observe(sec));
   }
 
