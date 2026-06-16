@@ -96,7 +96,7 @@ h1, h2, h3, .hero__title, .section__title, .contact__title {
   width: 100%;
   height: 100vh;
   z-index: 0;
-  opacity: 0.9;
+  opacity: 0.78;
   pointer-events: none;
 }
 
@@ -125,7 +125,8 @@ h1, h2, h3, .hero__title, .section__title, .contact__title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--s3) clamp(var(--s3), 5vw, var(--s6));
+  /* keep nav content aligned with the centred 1200px section column */
+  padding: var(--s3) max(clamp(var(--s3), 7vw, var(--s8)), calc((100% - 1200px) / 2));
   transition: background 0.4s var(--ease), padding 0.4s var(--ease), border-color 0.4s;
   border-bottom: 1px solid transparent;
 }
@@ -178,7 +179,7 @@ h1, h2, h3, .hero__title, .section__title, .contact__title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--s8) clamp(var(--s3), 7vw, var(--s8)) var(--s7);
+  padding: var(--s8) max(clamp(var(--s3), 7vw, var(--s8)), calc((100% - 1200px) / 2)) var(--s7);
 }
 .hero::after {
   /* darken the lower edge so text stays legible over the canvas */
@@ -187,7 +188,22 @@ h1, h2, h3, .hero__title, .section__title, .contact__title {
   background: linear-gradient(180deg, transparent 40%, var(--bg) 100%);
   z-index: -1; pointer-events: none;
 }
-.hero__inner { max-width: 62%; }
+.hero__inner {
+  max-width: min(62%, 760px);
+  position: relative;
+}
+/* soft scrim directly behind the hero text so drips never wash it out */
+.hero__inner::before {
+  content: "";
+  position: absolute;
+  inset: -8% -12% -8% -10%;
+  z-index: -1;
+  background: radial-gradient(120% 100% at 30% 50%,
+    color-mix(in srgb, var(--bg) 80%, transparent) 0%,
+    color-mix(in srgb, var(--bg) 55%, transparent) 45%,
+    transparent 78%);
+  pointer-events: none;
+}
 @media (max-width: 900px) { .hero__inner { max-width: 100%; } }
 .hero__eyebrow {
   font-size: var(--t-small);
@@ -271,7 +287,20 @@ h1, h2, h3, .hero__title, .section__title, .contact__title {
   padding: var(--s8) clamp(var(--s3), 7vw, var(--s8));
   background: var(--bg);
 }
-.section__head { max-width: 720px; margin-bottom: var(--s6); }
+/* centre all section content in a 1200px column that lines up with the nav;
+   inner blocks stay left-aligned to that column (not re-centred) */
+.section > * {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* section head: left-aligned to the column, not re-centred */
+.section__head {
+  max-width: 1200px;
+  margin-bottom: var(--s6);
+}
+.section__head > * { max-width: 720px; }
+.timeline { max-width: 1200px; }
 .section__label {
   font-size: var(--t-small);
   letter-spacing: 0.18em; text-transform: uppercase;
@@ -415,6 +444,9 @@ h1, h2, h3, .hero__title, .section__title, .contact__title {
 .timeline__year { font-family: 'Fraunces', serif; font-size: var(--t-med); color: var(--accent); }
 .timeline__what { color: var(--ink-soft); font-size: var(--t-base); }
 .timeline__what strong { color: var(--ink); font-weight: 500; }
+/* consolidated pre-2019 row reads as a quieter summary */
+.timeline__prior .timeline__year { font-size: var(--t-base); font-style: italic; color: var(--ink-faint); }
+.timeline__prior .timeline__what { font-size: var(--t-small); }
 
 /* =================== CONTACT =================== */
 .contact { text-align: center; }
@@ -522,10 +554,13 @@ h1, h2, h3, .hero__title, .section__title, .contact__title {
 
 /* =================== SCROLL-SPY DOTS =================== */
 .spy {
-  position: fixed; right: clamp(12px, 2vw, 28px); top: 50%;
+  position: fixed;
+  /* sit just inside the right edge of the centred content column */
+  right: max(20px, calc((100% - 1200px) / 2 - 8px));
+  top: 50%;
   transform: translateY(-50%);
   z-index: 90;
-  display: flex; flex-direction: column; gap: var(--s2);
+  display: flex; flex-direction: column; gap: var(--s3);
 }
 .spy a {
   display: flex; align-items: center; gap: var(--s2);
