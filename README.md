@@ -1,25 +1,24 @@
 # Omar Chacón — Painter
 
-A one-page portfolio site for the Colombian-American painter **Omar Chacón** (b. Bogotá, 1979; based in Queens, New York). Chacón builds vivid, mosaic-like abstractions from thousands of hand-cast acrylic drips — *a brush is never used.* The site turns that technique into the interface itself: a generative field of concentric paint "drips" drifts behind the hero and parts around the cursor.
+A one-page portfolio site for the Colombian-American painter **Omar Chacón** (b. Bogotá, 1979; based in Queens, New York). Chacón builds vivid, mosaic-like abstractions from thousands of hand-cast acrylic drips — *a brush is never used.* The site lets the work carry it: a single painting fills the hero full-bleed, with the artist's name set quietly over a soft scrim, then opens into a calm gallery, process, about, and exhibitions.
 
 ## What's included
 
 - `index.html` — single-page site: hero, work gallery, process, about, exhibitions, contact.
 - `styles.css` — one font system (Inter + Fraunces), 8px grid, golden-ratio layout, dark by default with a light toggle.
-- `script.js` — generative drip-field canvas, custom cursor drip, gallery lightbox, scroll reveals, sticky nav, theme persistence.
+- `script.js` — gallery lightbox, exhibition mode, scroll reveals, sticky nav, count-up stats, theme persistence.
 - `assets/` — artwork images.
 - `favicon.svg` — a single concentric drip.
 
 ## Interactive elements
 
-- **Generative drip field** — hundreds of concentric acrylic "drips" rendered on `<canvas>`, drifting and repelling away from the pointer (his peel-and-collage method, in code).
-- **Cursor drip** — a single paint drip trails the pointer and changes color on every hover.
+- **Full-bleed hero** — a single painting fills the screen behind the artist's name, with a slow, near-imperceptible drift (disabled under `prefers-reduced-motion`).
 - **Exhibition mode** — a fullscreen, one-work-at-a-time slideshow with keyboard nav (←/→/Esc), a progress bar, slide counter, and dot navigation.
 - **Lightbox gallery** — keyboard-navigable (←/→/Esc), asymmetric golden-ratio grid, with 3D tilt-toward-cursor and a spotlight that follows the pointer.
 - **Status chips** — each work is tagged Available / Sold / Commissioned.
 - **Count-up stats, branded page loader, scroll-spy section dots.**
 - **Contact form** — serverless inquiry form via Web3Forms (add an access key in `index.html`), with success/error states and a honeypot.
-- **Scroll reveals, animated gradient headline, marquee, light/dark toggle.**
+- **Scroll reveals, marquee, light/dark toggle.**
 
 Respects `prefers-reduced-motion` and falls back gracefully on touch devices.
 
@@ -53,6 +52,6 @@ to GitHub Pages (an `ALIAS`/`A` records for the apex, or a `CNAME` record to
 ## Sources & credit
 
 Biographical and exhibition facts were compiled from the artist's representing
-galleries (Margaret Thatcher Projects, Fouladi Projects, Robischon Gallery),
-Ringling College, the Bronx River Art Center, and 502 Gallery. All artwork is
-© Omar Chacón. This site is a portfolio/tribute build.
+gallery (Robischon Gallery, Denver) and others he has shown with (Margaret
+Thatcher Projects, Fouladi Projects), plus Ringling College and the Bronx River
+Art Center. All artwork is © Omar Chacón. This site is a portfolio/tribute build.

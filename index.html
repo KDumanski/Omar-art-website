@@ -15,13 +15,13 @@
   <meta property="og:url" content="https://omarchaconart.com/" />
   <meta property="og:site_name" content="Omar Chacón" />
   <meta property="og:title" content="Omar Chacón — Painter" />
-  <meta property="og:description" content="Thousands of hand-cast acrylic drips, collaged into a global nation of color. A brush is never used." />
+  <meta property="og:description" content="Thousands of hand-cast acrylic drips, peeled by hand and collaged onto canvas. A brush is never used." />
   <meta property="og:image" content="https://omarchaconart.com/assets/paintino-135.jpeg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Omar Chacón — Painter" />
-  <meta name="twitter:description" content="Thousands of hand-cast acrylic drips, collaged into a global nation of color. A brush is never used." />
+  <meta name="twitter:description" content="Thousands of hand-cast acrylic drips, peeled by hand and collaged onto canvas. A brush is never used." />
   <meta name="twitter:image" content="https://omarchaconart.com/assets/paintino-135.jpeg" />
 
   <!-- Structured data: the artist as an entity -->
@@ -44,7 +44,7 @@
     "sameAs": [
       "https://www.instagram.com/omarchaconjr/",
       "https://www.artnet.com/artists/omar-chac%C3%B3n/",
-      "https://www.502.gallery/omar-chacon-artworks"
+      "https://robischongallery.com/"
     ]
   }
   </script>
@@ -93,12 +93,6 @@
     <a href="#contact" data-spy="contact"><span></span><em>Contact</em></a>
   </nav>
 
-  <!-- Generative paint-drip field, drawn behind the hero -->
-  <canvas id="drip-field" aria-hidden="true"></canvas>
-
-  <!-- Cursor companion: a single drip that trails the pointer -->
-  <div id="cursor-drip" aria-hidden="true"></div>
-
   <!-- NAV -->
   <header class="nav" id="nav">
     <a href="#top" class="nav__brand">
@@ -117,21 +111,17 @@
     </button>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO — a single painting fills the screen; the name sits quietly over it -->
   <section class="hero" id="top">
+    <div class="hero__art" aria-hidden="true">
+      <img src="assets/paintino-135.jpeg" alt="" fetchpriority="high" />
+    </div>
     <div class="hero__inner">
-      <p class="hero__eyebrow reveal">Painter &nbsp;·&nbsp; Bogotá &nbsp;·&nbsp; New York</p>
-      <h1 class="hero__title">
-        <span class="reveal" style="--d:1">A&nbsp;global&nbsp;nation,</span>
-        <span class="reveal hero__title--accent" style="--d:2">cast in color.</span>
-      </h1>
-      <p class="hero__lede reveal" style="--d:3">
-        Omar Chacón builds his paintings from thousands of hand-cast acrylic
-        drips — each one peeled, sorted, and collaged by hand. A brush is never used.
-      </p>
-      <div class="hero__actions reveal" style="--d:4">
+      <h1 class="hero__title reveal">Omar&nbsp;Chacón</h1>
+      <p class="hero__eyebrow reveal" style="--d:1">Painter &nbsp;·&nbsp; Bogotá &nbsp;·&nbsp; New York</p>
+      <div class="hero__actions reveal" style="--d:2">
         <a href="#work" class="btn btn--solid">View the work</a>
-        <a href="#process" class="btn btn--ghost">How it's made</a>
+        <a href="#about" class="btn btn--ghost">About the artist</a>
       </div>
     </div>
     <button class="hero__scroll" aria-label="Scroll to work" data-scroll="#work">
@@ -174,40 +164,19 @@
     </div>
   </section>
 
-  <!-- PROCESS -->
+  <!-- PROCESS — told as prose, not a bulleted checklist -->
   <section class="section process" id="process">
     <div class="section__head">
       <p class="section__label reveal">The method</p>
-      <h2 class="section__title reveal">Three days, no brush.</h2>
+      <h2 class="section__title reveal">No brush is used.</h2>
+      <p class="section__intro reveal">
+        Acrylic is poured onto wax paper and left to dry into thousands of
+        brightly colored ovals, drips, and dots — each one allowed to find its
+        own edge. Once dry, every shape is hand-peeled into a unique, pliable
+        building block. Those drips then migrate to the canvas, layered by hand
+        into dense, mosaic-like fields.
+      </p>
     </div>
-
-    <ol class="steps">
-      <li class="step reveal">
-        <span class="step__num">01</span>
-        <h3 class="step__title">Pour</h3>
-        <p>Acrylic is poured onto wax paper — thousands of brightly colored ovals, drips, and dots, each one allowed to find its own edge.</p>
-      </li>
-      <li class="step reveal">
-        <span class="step__num">02</span>
-        <h3 class="step__title">Peel</h3>
-        <p>Once dry, every shape is hand-peeled from the paper. Each becomes a unique, pliable "pre-made brushstroke" — no two alike.</p>
-      </li>
-      <li class="step reveal">
-        <span class="step__num">03</span>
-        <h3 class="step__title">Gather</h3>
-        <p>The drips migrate to the canvas and are layered into mosaic-like fields — a social gathering of disparate elements brought into one.</p>
-      </li>
-    </ol>
-
-    <figure class="pullquote reveal">
-      <blockquote>
-        "I liken my works to a social gathering; a global nation comprised of a
-        diverse blend of culturally different peoples, living amongst each other
-        with a sense of unity, yet maintaining individuality — each unit, each
-        drip is unique."
-      </blockquote>
-      <figcaption>— Omar Chacón</figcaption>
-    </figure>
   </section>
 
   <!-- ABOUT -->
@@ -215,12 +184,12 @@
     <div class="about__grid">
       <div class="about__media reveal">
         <div class="about__frame">
-          <img src="assets/paintino-135.jpeg" alt="Detail of an Omar Chacón painting: concentric acrylic ovals in saturated color" loading="lazy" />
+          <img src="assets/work-10.jpg" alt="Detail of an Omar Chacón painting: thousands of hand-cast acrylic tiles in saturated color" loading="lazy" />
         </div>
         <div class="about__stats" id="stats">
           <div><strong data-count="0" data-suffix="">0</strong><span>Brushes used</span></div>
           <div><strong data-count="1000" data-suffix="s">1000s</strong><span>Drips per work</span></div>
-          <div><strong data-count="4" data-suffix="">4</strong><span>Galleries</span></div>
+          <div><strong class="about__stat-text">Robischon</strong><span>Represented by</span></div>
         </div>
       </div>
       <div class="about__text">
@@ -241,9 +210,9 @@
           with recent series turning to the imperial purples and golds of Ancient Rome.
         </p>
         <p class="reveal">
-          Chacón is represented by Margaret Thatcher Projects (New York),
-          Fouladi Projects (San Francisco), Robischon Gallery (Denver), and
-          Brunnhofer Galerie (Linz, Austria).
+          Chacón is represented by Robischon Gallery (Denver). His work has
+          also been shown with Margaret Thatcher Projects (New York), Fouladi
+          Projects (San Francisco), and Brunnhofer Galerie (Linz, Austria).
         </p>
       </div>
     </div>
@@ -257,8 +226,8 @@
     </div>
     <div class="press__grid">
       <blockquote class="press__card reveal">
-        <p>"Intricately patterned paintings inspired by the traditional folk art of South America… thousands of brightly-colored ovals and drips, each one unique and hand-crafted."</p>
-        <cite>502 Gallery</cite>
+        <p>"Geometric and organic elements build intricate compositions that beckon the viewer to take a closer look."</p>
+        <cite>Robischon Gallery</cite>
       </blockquote>
       <blockquote class="press__card reveal" style="--d:1">
         <p>"A brush is never used. The dried acrylic forms become pliable building blocks — the basis of his paintings."</p>
@@ -267,10 +236,6 @@
       <blockquote class="press__card reveal" style="--d:2">
         <p>"Paint pouring on a separate surface that, once dried, migrates to the canvas in mosaic-like tiles — invoking concepts of the masses."</p>
         <cite>Ringling College</cite>
-      </blockquote>
-      <blockquote class="press__card reveal" style="--d:3">
-        <p>"Geometric and organic elements build intricate compositions that beckon the viewer to take a closer look."</p>
-        <cite>Robischon Gallery</cite>
       </blockquote>
     </div>
   </section>
@@ -282,7 +247,6 @@
       <h2 class="section__title reveal">A working record.</h2>
     </div>
     <ul class="timeline" id="timeline">
-      <li class="reveal"><span class="timeline__year">2025</span><span class="timeline__what"><strong>Color + Clay</strong> — 502 Gallery, Sarasota, FL</span></li>
       <li class="reveal"><span class="timeline__year">2024</span><span class="timeline__what"><strong>NIMBA</strong> — Robischon Gallery, Denver, CO</span></li>
       <li class="reveal"><span class="timeline__year">2024</span><span class="timeline__what"><strong>Chromatic Echoes</strong> — Ringling College, Sarasota, FL</span></li>
       <li class="reveal"><span class="timeline__year">2023</span><span class="timeline__what"><strong>45+ Anniversary Series, Part II</strong> — Robischon Gallery, Denver, CO</span></li>
@@ -328,7 +292,7 @@
 
       <div class="contact__links">
         <a class="contact__link" href="https://www.instagram.com/omarchaconjr/" target="_blank" rel="noopener">Instagram&nbsp;↗</a>
-        <a class="contact__link" href="https://www.502.gallery/omar-chacon-artworks" target="_blank" rel="noopener">502&nbsp;Gallery&nbsp;↗</a>
+        <a class="contact__link" href="https://robischongallery.com/" target="_blank" rel="noopener">Robischon&nbsp;Gallery&nbsp;↗</a>
         <a class="contact__link" href="https://www.artnet.com/artists/omar-chac%C3%B3n/" target="_blank" rel="noopener">Artnet&nbsp;↗</a>
       </div>
     </div>
