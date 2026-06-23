@@ -14,3 +14,6 @@ desktop.ini
 
 # dependencies (none expected — static site)
 node_modules/
+
+# local backup of the pre-redesign scroll site — keep locally, don't publish
+_legacy-scroll/

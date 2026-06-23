@@ -54,274 +54,393 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-
-  <!--
-    Google Analytics 4 — inactive until a real Measurement ID is added.
-    Replace G-XXXXXXXXXX below and uncomment to enable.
-  -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
 </head>
 <body>
-  <!-- Skip link for keyboard users -->
-  <a href="#top" class="skip-link">Skip to content</a>
-
-  <!-- Reading-progress bar -->
-  <div class="progress-top" id="progress-top" aria-hidden="true"><span></span></div>
-
   <!-- Branded page loader -->
   <div class="loader" id="loader" aria-hidden="true">
     <span class="loader__mark"></span>
     <span class="loader__name">Omar&nbsp;Chacón</span>
   </div>
 
-  <!-- Scroll-spy section dots -->
-  <nav class="spy" id="spy" aria-label="Section navigation">
-    <a href="#top" data-spy="top"><span></span><em>Top</em></a>
-    <a href="#work" data-spy="work"><span></span><em>Work</em></a>
-    <a href="#process" data-spy="process"><span></span><em>Process</em></a>
-    <a href="#about" data-spy="about"><span></span><em>About</em></a>
-    <a href="#press" data-spy="press"><span></span><em>Press</em></a>
-    <a href="#exhibitions" data-spy="exhibitions"><span></span><em>Exhibitions</em></a>
-    <a href="#contact" data-spy="contact"><span></span><em>Contact</em></a>
-  </nav>
-
-  <!-- NAV -->
-  <header class="nav" id="nav">
-    <a href="#top" class="nav__brand">
-      <span class="nav__mark" aria-hidden="true"></span>
-      <span class="nav__name">Omar&nbsp;Chacón</span>
-    </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="#work">Work</a>
-      <a href="#process">Process</a>
-      <a href="#about">About</a>
-      <a href="#exhibitions">Exhibitions</a>
-      <a href="#contact" class="nav__cta">Contact</a>
-    </nav>
-    <button class="nav__theme" id="theme-toggle" aria-label="Toggle light and dark mode">
-      <span class="nav__theme-dot"></span>
+  <!-- Persistent top bar: brand returns home; theme toggle -->
+  <header class="topbar">
+    <button class="brand" data-home aria-label="Omar Chacón — home">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Omar&nbsp;Chacón</span>
+    </button>
+    <button class="theme" id="theme-toggle" aria-label="Toggle light and dark mode">
+      <span class="theme__dot"></span>
     </button>
   </header>
 
-  <!-- HERO — a single painting fills the screen; the name sits quietly over it -->
-  <section class="hero" id="top">
-    <div class="hero__art" aria-hidden="true">
+  <!-- ===================================================================
+       LANDING — one fit-to-screen page. A painting fills the background;
+       the name + section buttons sit over it. Nothing scrolls here.
+       Click a section button to open it full-screen.
+  ==================================================================== -->
+  <main class="stage" id="stage">
+    <div class="stage__bg" id="stage-bg" aria-hidden="true">
       <img src="assets/paintino-135.jpeg" alt="" fetchpriority="high" />
+      <img src="assets/mayoyoque.jpg" alt="" fetchpriority="low" />
+      <img src="assets/work-11.jpg" alt="" fetchpriority="low" />
     </div>
-    <div class="hero__inner">
-      <h1 class="hero__title reveal">Omar&nbsp;Chacón</h1>
-      <p class="hero__eyebrow reveal" style="--d:1">Painter &nbsp;·&nbsp; Bogotá &nbsp;·&nbsp; New York</p>
-      <div class="hero__actions reveal" style="--d:2">
-        <a href="#work" class="btn btn--solid">View the work</a>
-        <a href="#about" class="btn btn--ghost">About the artist</a>
-      </div>
+    <div class="stage__scrim" aria-hidden="true"></div>
+
+    <div class="stage__center">
+      <p class="stage__eyebrow">Painter &nbsp;·&nbsp; Bogotá &nbsp;·&nbsp; New York</p>
+      <h1 class="stage__name">Omar&nbsp;Chacón</h1>
+
+      <nav class="menu" aria-label="Sections">
+        <button class="menu__item" data-open="paintings"><span class="menu__idx">01</span><span class="menu__label">Paintings</span></button>
+        <button class="menu__item" data-open="about"><span class="menu__idx">02</span><span class="menu__label">About</span></button>
+        <button class="menu__item" data-open="cv"><span class="menu__idx">03</span><span class="menu__label">CV</span></button>
+        <button class="menu__item" data-open="articles"><span class="menu__idx">04</span><span class="menu__label">Articles</span></button>
+        <button class="menu__item" data-open="contact"><span class="menu__idx">05</span><span class="menu__label">Contact</span></button>
+      </nav>
     </div>
-    <button class="hero__scroll" aria-label="Scroll to work" data-scroll="#work">
-      <span></span>
+
+    <button class="stage__cycle" id="stage-cycle" aria-label="Show the next painting">
+      <span></span> Next painting
     </button>
-  </section>
+  </main>
 
-  <!-- MARQUEE -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>Acrylic on canvas</span><span class="dot">●</span>
-      <span>A brush is never used</span><span class="dot">●</span>
-      <span>Thousands of drips</span><span class="dot">●</span>
-      <span>Each unit unique</span><span class="dot">●</span>
-      <span>Mestizo color</span><span class="dot">●</span>
-      <span>Acrylic on canvas</span><span class="dot">●</span>
-      <span>A brush is never used</span><span class="dot">●</span>
-      <span>Thousands of drips</span><span class="dot">●</span>
-      <span>Each unit unique</span><span class="dot">●</span>
-      <span>Mestizo color</span><span class="dot">●</span>
-    </div>
-  </div>
+  <!-- ===================================================================
+       PANELS — each opens full-screen over the landing on click.
+  ==================================================================== -->
+  <div class="panels" id="panels">
 
-  <!-- WORK -->
-  <section class="section work" id="work">
-    <div class="section__head">
-      <p class="section__label reveal">Selected work</p>
-      <h2 class="section__title reveal">The drips, gathered.</h2>
-      <p class="section__intro reveal">
-        Concentric ovals, lozenges, and discs — assembled into dense, jewel-toned
-        fields. Hover any piece to feel it lift off the canvas.
-      </p>
-      <button class="btn btn--ghost work__present reveal" id="enter-exhibition">
-        ⤢&nbsp;&nbsp;Enter exhibition mode
-      </button>
-    </div>
+    <!-- 01 · PAINTINGS — drill down by year -->
+    <section class="panel" id="paintings" aria-labelledby="paintings-title" aria-hidden="true" hidden>
+      <div class="panel__chrome">
+        <p class="panel__eyebrow">01 — Paintings</p>
+        <button class="panel__close" data-home aria-label="Close section">Close&nbsp;✕</button>
+      </div>
+      <div class="panel__body">
+        <header class="panel__head">
+          <h2 class="panel__title" id="paintings-title">The work.</h2>
+          <p class="panel__intro">Hand-cast acrylic, every piece. Filter by year, size, or surface.</p>
+        </header>
 
-    <div class="gallery" id="gallery">
-      <!-- cards injected by JS, but here as semantic fallback -->
-    </div>
-  </section>
-
-  <!-- PROCESS — told as prose, not a bulleted checklist -->
-  <section class="section process" id="process">
-    <div class="section__head">
-      <p class="section__label reveal">The method</p>
-      <h2 class="section__title reveal">No brush is used.</h2>
-      <p class="section__intro reveal">
-        Acrylic is poured onto wax paper and left to dry into thousands of
-        brightly colored ovals, drips, and dots — each one allowed to find its
-        own edge. Once dry, every shape is hand-peeled into a unique, pliable
-        building block. Those drips then migrate to the canvas, layered by hand
-        into dense, mosaic-like fields.
-      </p>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section about" id="about">
-    <div class="about__grid">
-      <div class="about__media reveal">
-        <div class="about__frame">
-          <img src="assets/work-10.jpg" alt="Detail of an Omar Chacón painting: thousands of hand-cast acrylic tiles in saturated color" loading="lazy" />
+        <!-- FILTER BAR — three independent facets -->
+        <div class="filters" id="filters">
+          <div class="filters__row" data-facet="year" aria-label="Filter by year">
+            <span class="filters__label">Year</span>
+            <span class="filters__chips" id="chips-year"></span>
+          </div>
+          <div class="filters__row" data-facet="tier" aria-label="Filter by size">
+            <span class="filters__label">Size</span>
+            <span class="filters__chips">
+              <button class="chip is-active" data-tier="all">All</button>
+              <button class="chip" data-tier="pequeno">Pequeño<small>up to 16″</small></button>
+              <button class="chip" data-tier="mediano">Mediano<small>20–34″</small></button>
+              <button class="chip" data-tier="grande">Grande<small>40″ +</small></button>
+            </span>
+          </div>
+          <div class="filters__row" data-facet="surface" aria-label="Filter by surface">
+            <span class="filters__label">Surface</span>
+            <span class="filters__chips">
+              <button class="chip is-active" data-surface="all">All</button>
+              <button class="chip" data-surface="Canvas">Canvas</button>
+              <button class="chip" data-surface="Paper">Paper</button>
+              <button class="chip" data-surface="Wood panel">Wood panel</button>
+            </span>
+          </div>
         </div>
-        <div class="about__stats" id="stats">
-          <div><strong data-count="0" data-suffix="">0</strong><span>Brushes used</span></div>
-          <div><strong data-count="1000" data-suffix="s">1000s</strong><span>Drips per work</span></div>
-          <div><strong class="about__stat-text">Robischon</strong><span>Represented by</span></div>
+
+        <p class="filters__count" id="works-count"></p>
+        <div class="grid" id="works-grid"><!-- works injected by JS --></div>
+        <p class="filters__empty" id="works-empty" hidden>No works match those filters. <button class="linkback" id="clear-filters">Clear filters</button></p>
+      </div>
+    </section>
+
+    <!-- 02 · ABOUT -->
+    <section class="panel" id="about" aria-labelledby="about-title" aria-hidden="true" hidden>
+      <div class="panel__chrome">
+        <p class="panel__eyebrow">02 — About</p>
+        <button class="panel__close" data-home aria-label="Close section">Close&nbsp;✕</button>
+      </div>
+      <div class="panel__body">
+        <div class="about">
+          <div class="about__media">
+            <div class="about__frame">
+              <img src="assets/work-10.jpg" alt="Detail of an Omar Chacón painting: thousands of hand-cast acrylic tiles in saturated color" loading="lazy" />
+            </div>
+          </div>
+          <div class="about__text">
+            <h2 class="panel__title" id="about-title">From Bogotá to a Queens studio.</h2>
+            <p>Omar Chacón was born in Bogotá, Colombia and moved to the United States
+              with his family as a child. He earned a BFA from Ringling College of
+              Art and Design and an MFA in painting from the San Francisco Art
+              Institute. He lives and works in Queens, New York.</p>
+            <p>His signature method began with a memory: his self-taught grandfather
+              painting small abstract dots. Those dots became colorful lozenges and
+              discs — read as aerial views of people, mixing, multiplying, and taking
+              over the surface. The work draws on the folk art and indigenous textiles
+              of South America and the <em>mestizo</em> fusion of Latin American life,
+              with recent series turning to the imperial purples and golds of Ancient Rome.</p>
+
+            <figure class="pullquote pullquote--inline">
+              <blockquote>Acrylic is poured onto wax paper and left to dry into thousands
+                of brightly colored ovals and drips — each one finding its own edge.
+                Once dry, every shape is hand-peeled into a unique building block, then
+                layered onto the canvas. <strong>A brush is never used.</strong></blockquote>
+              <figcaption>The method, in his words</figcaption>
+            </figure>
+
+            <p>Chacón is represented by Robischon Gallery (Denver). His work has
+              also been shown with Margaret Thatcher Projects (New York), Fouladi
+              Projects (San Francisco), and Brunnhofer Galerie (Linz, Austria).</p>
+          </div>
         </div>
       </div>
-      <div class="about__text">
-        <p class="section__label reveal">About</p>
-        <h2 class="section__title reveal">From Bogotá to a Queens studio.</h2>
-        <p class="reveal">
-          Omar Chacón was born in Bogotá, Colombia and moved to the United States
-          with his family as a child. He earned a BFA from Ringling College of
-          Art and Design and an MFA in painting from the San Francisco Art
-          Institute. He lives and works in Queens, New York.
-        </p>
-        <p class="reveal">
-          His signature method began with a memory: his self-taught grandfather
-          painting small abstract dots. Those dots became colorful lozenges and
-          discs — read as aerial views of people, mixing, multiplying, and taking
-          over the surface. The work draws on the folk art and indigenous textiles
-          of South America and the <em>mestizo</em> fusion of Latin American life,
-          with recent series turning to the imperial purples and golds of Ancient Rome.
-        </p>
-        <p class="reveal">
-          Chacón is represented by Robischon Gallery (Denver). His work has
-          also been shown with Margaret Thatcher Projects (New York), Fouladi
-          Projects (San Francisco), and Brunnhofer Galerie (Linz, Austria).
-        </p>
+    </section>
+
+    <!-- 03 · CV -->
+    <section class="panel" id="cv" aria-labelledby="cv-title" aria-hidden="true" hidden>
+      <div class="panel__chrome">
+        <p class="panel__eyebrow">03 — CV</p>
+        <button class="panel__close" data-home aria-label="Close section">Close&nbsp;✕</button>
       </div>
-    </div>
-  </section>
+      <div class="panel__body">
+        <header class="panel__head">
+          <h2 class="panel__title" id="cv-title">A working record.</h2>
+          <p class="panel__intro">Education, awards, exhibitions, commissions, and press.</p>
+        </header>
 
-  <!-- PRESS / IN HIS WORDS -->
-  <section class="section press" id="press">
-    <div class="section__head">
-      <p class="section__label reveal">In the press &amp; in his words</p>
-      <h2 class="section__title reveal">What the work is doing.</h2>
-    </div>
-    <div class="press__grid">
-      <blockquote class="press__card reveal">
-        <p>"Geometric and organic elements build intricate compositions that beckon the viewer to take a closer look."</p>
-        <cite>Robischon Gallery</cite>
-      </blockquote>
-      <blockquote class="press__card reveal" style="--d:1">
-        <p>"A brush is never used. The dried acrylic forms become pliable building blocks — the basis of his paintings."</p>
-        <cite>Fouladi Projects</cite>
-      </blockquote>
-      <blockquote class="press__card reveal" style="--d:2">
-        <p>"Paint pouring on a separate surface that, once dried, migrates to the canvas in mosaic-like tiles — invoking concepts of the masses."</p>
-        <cite>Ringling College</cite>
-      </blockquote>
-    </div>
-  </section>
+        <div class="cv">
+          <ul class="timeline">
+            <li><span class="timeline__year">Now</span><span class="timeline__what"><span class="cv__type">Represented</span><strong>Robischon Gallery</strong> — Denver, CO</span></li>
 
-  <!-- EXHIBITIONS -->
-  <section class="section exhibitions" id="exhibitions">
-    <div class="section__head">
-      <p class="section__label reveal">Selected exhibitions &amp; honors</p>
-      <h2 class="section__title reveal">A working record.</h2>
-    </div>
-    <ul class="timeline" id="timeline">
-      <li class="reveal"><span class="timeline__year">2024</span><span class="timeline__what"><strong>NIMBA</strong> — Robischon Gallery, Denver, CO</span></li>
-      <li class="reveal"><span class="timeline__year">2024</span><span class="timeline__what"><strong>Chromatic Echoes</strong> — Ringling College, Sarasota, FL</span></li>
-      <li class="reveal"><span class="timeline__year">2023</span><span class="timeline__what"><strong>45+ Anniversary Series, Part II</strong> — Robischon Gallery, Denver, CO</span></li>
-      <li class="reveal"><span class="timeline__year">2022</span><span class="timeline__what"><strong>Variaciones Chuecas</strong> — Robischon Gallery, Denver, CO</span></li>
-      <li class="reveal"><span class="timeline__year">2019</span><span class="timeline__what"><strong>Ohio Criollo</strong> — Margaret Thatcher Projects, New York (4th solo)</span></li>
-      <li class="reveal timeline__prior"><span class="timeline__year">Earlier</span><span class="timeline__what"><strong>Selected, 2007–2016</strong> — Las Mesalinas y Otros Ensayos (Margaret Thatcher Projects, 2015); Queens International, Queens Museum (2009); New York Foundation for the Arts Fellowship (2008); Sancochos a la Cimabue, Bronx River Art Center (2008); William &amp; Dorothy Yeck Award (2007).</span></li>
-    </ul>
-  </section>
+            <li><span class="timeline__year">2024</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>NIMBA</strong> — Robischon Gallery, Denver, CO</span>
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Chromatic Echoes</strong> — Ringling College of Art and Design, Sarasota, FL</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Chaotic Precisions</strong> (with Gaston Bertin) — Margaret Thatcher Projects, New York, NY</span>
+            </span></li>
 
-  <!-- CONTACT -->
-  <section class="section contact" id="contact">
-    <div class="contact__inner reveal">
-      <h2 class="contact__title">Let's gather.</h2>
-      <p class="contact__lede">
-        For studio visits, acquisitions, and exhibition inquiries.
-      </p>
+            <li><span class="timeline__year">2023</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Cirio Totale</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Sin Seine</strong> — Fouladi Projects, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>45+ Anniversary Exhibition Series, Part II</strong> — Robischon Gallery, Denver, CO</span>
+            </span></li>
 
-      <form class="contact__form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <!-- Replace with the artist's Web3Forms access key (free at web3forms.com) -->
-        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
-        <input type="hidden" name="subject" value="New inquiry from omarchaconart.com" />
-        <input type="hidden" name="from_name" value="Omar Chacón website" />
-        <!-- Honeypot (hidden from people, catches bots) -->
-        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+            <li><span class="timeline__year">2022</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Variaciones Chuecas</strong> — Robischon Gallery, Denver, CO</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>The World Develops Blank Spots</strong> — Margaret Thatcher Projects, New York, NY</span>
+            </span></li>
 
-        <div class="contact__row">
-          <label class="field">
-            <span>Name</span>
-            <input type="text" name="name" required autocomplete="name" />
-          </label>
-          <label class="field">
-            <span>Email</span>
-            <input type="email" name="email" required autocomplete="email" />
-          </label>
+            <li><span class="timeline__year">2021</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Fluid Borders</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>APPLIED MATTER</strong> — Robischon Gallery, Denver, CO</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Picnic</strong> &amp; <strong>Shift</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Kunstsalon Linz</strong> — Schloss Museum, Linz, Austria</span>
+            </span></li>
+
+            <li><span class="timeline__year">2020</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Mesalinas Operáticas</strong> — Fouladi Projects, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Summer Selections</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>ADAPT (Iteration 2)</strong> — Robischon Gallery, Denver, CO</span>
+            </span></li>
+
+            <li><span class="timeline__year">2019</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Ohio Criollo</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Material Color</strong> &amp; <strong>Future Tense</strong> — Margaret Thatcher Projects, New York, NY</span>
+            </span></li>
+
+            <li><span class="timeline__year">2018</span><span class="timeline__what"><span class="cv__type">Group</span><strong>Light Years</strong> — Margaret Thatcher Projects, New York, NY</span></li>
+
+            <li><span class="timeline__year">2017</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Hybrid Forms</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type">Commission</span><strong>NYU Langone Art Program &amp; Collection</strong>, New York, NY</span>
+            </span></li>
+
+            <li><span class="timeline__year">2016</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Mesalinas Operáticas</strong> — Fouladi Projects, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Summer Breeze</strong> — Margaret Thatcher Projects, New York, NY</span>
+            </span></li>
+
+            <li><span class="timeline__year">2015</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Las Mesalinas y Otros Ensayos</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Hotspots</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Pixelated: Sum of its Pieces</strong> — Children’s Museum of Art, New York, NY</span>
+            </span></li>
+
+            <li><span class="timeline__year">2014</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Turn Up the Heat</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Discernible Regularities</strong> — Collar Works Gallery, Troy, NY</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Press</span>Amy Griffin, “Artists Explore Patterns,” <em>Times Union</em></span>
+            </span></li>
+
+            <li><span class="timeline__year">2013</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Ensayos</strong> — Fouladi Projects, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Catch as Catch Can</strong> — Margaret Thatcher Projects, New York, NY</span>
+            </span></li>
+
+            <li><span class="timeline__year">2012</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Bacanales Tropicales</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Yi, Dos, Drei, Four</strong> — Fouladi Projects, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Today’s Visual Language: Southern Abstraction</strong> — Mobile Museum of Art, Mobile, AL</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Press</span>8020nyc · The Worley Gig · Arte al Límite</span>
+            </span></li>
+
+            <li><span class="timeline__year">2011</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Bacanería Tropical</strong> — Magrorocca Gallery, Milan, IT</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>The Working Title</strong> — Bronx River Art Center, NY</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>w h i t e-h o t</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Press</span><em>Art Experience NY</em></span>
+            </span></li>
+
+            <li><span class="timeline__year">2010</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Bacanales</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Pictures at an Exhibition</strong> — Lincart, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Stratigraphic</strong> — Chandra Cerrito Contemporary, Oakland, CA</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Press</span><em>East Bay Express</em> · <em>Juxtapoz</em></span>
+            </span></li>
+
+            <li><span class="timeline__year">2009</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Sancocho Vitae</strong> — “Tata” Greene Contemporary, New York, NY</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Sunny Side Up</strong> — Margaret Thatcher Projects, New York, NY</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Material Color</strong> — Hunterdon County Art Museum, Clinton, NJ</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Rolling and Ruling</strong> — Sabina Lee Gallery, Los Angeles, CA</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Press</span><em>Queens International 4</em>, exhibition catalogue</span>
+            </span></li>
+
+            <li><span class="timeline__year">2008</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Mostra Personale</strong> — Magrorocca, Milan, IT</span>
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Sancochos a la Cimabue</strong> — Bronx River Art Center, Bronx, NY</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Queens Museum of Art</strong>, New York</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Sancochos Casiqueños a la Cimabue</strong> — Heistand Galleries, Miami University, Oxford, OH</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Albright-Knox Collector’s Gallery</strong>, Buffalo, NY</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Award</span>NYFA Artist Fellowship — New York Foundation for the Arts</span>
+            </span></li>
+
+            <li><span class="timeline__year">2007</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>New Works</strong> — Lincart, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>Busy at War and Love</strong> (with José Sariñana) — Greene Contemporary, Sarasota, FL</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Assemblage</strong> — Greene Contemporary, Sarasota, FL</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Miami University Young Painters Exhibition</strong> — Heistand Galleries, Oxford, OH</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Award</span>William &amp; Dorothy Yeck Award (Juror: Jerry Saltz, Village Voice)</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Press</span>Joseph Jacobs, “Emerging Artists,” <em>Art &amp; Antiques</em></span>
+            </span></li>
+
+            <li><span class="timeline__year">2006</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Uneasy Marriage</strong> — Motel Gallery, Portland, OR</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Press</span>Stephanie Cash, “Report From San Francisco I,” <em>Art in America</em></span>
+            </span></li>
+
+            <li><span class="timeline__year">2005</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>New Works</strong> — Lincart, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Ad Infinitum: The Aesthetics of Repetition II</strong> — Haines Gallery, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>First Class</strong> — Lincart at Post Gallery, Los Angeles, CA</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Macomexico Arte Contemporáneo</strong> — Lincart, Mexico Lindo</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>Close Calls</strong> — Headlands Center for the Arts, Sausalito, CA</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Award</span>SECA Award Nominee — San Francisco Museum of Modern Art</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Press</span><em>Pelican Press</em> · <em>Sarasota Herald-Tribune</em> · <em>Artnet</em> · <em>Artweek</em></span>
+            </span></li>
+
+            <li><span class="timeline__year">2004</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type">Education</span><strong>MFA</strong> — San Francisco Art Institute, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>The Unified South, Part 1</strong> — Diego Rivera Gallery, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>New Works</strong> — Stanford Art Spaces, Stanford, CA</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>CREAM from the top</strong> — Arts Benicia Center Gallery, Benicia, CA</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>#1 The South</strong> — Ft. Mason MFA Exhibit, Herbst Pavilion, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type">Group</span><strong>505 Sansome Tower Project</strong> — Trans-America Pyramid, San Francisco, CA</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Award</span>Tournesol Award &amp; Residency Finalist — Headlands Center for the Arts</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Award</span>MFA Studio Award Nominee — Headlands Center for the Arts</span>
+            </span></li>
+
+            <li><span class="timeline__year">2003</span><span class="timeline__what"><span class="cv__type">Group</span><strong>Glad to be Unhappy</strong> — The Tahoe Gallery, Sierra, NV</span></li>
+
+            <li><span class="timeline__year">2002</span><span class="timeline__what">
+              <span class="cv__line"><span class="cv__type">Education</span><strong>BFA</strong> — Ringling School of Art and Design, Sarasota, FL</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Award</span>Merit Scholarship &amp; Grant — San Francisco Art Institute</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Award</span>Teaching Assistantship — University of North Carolina at Chapel Hill</span>
+              <span class="cv__line"><span class="cv__type cv__type--award">Award</span>Jurors’ Award, Best of Ringling</span>
+            </span></li>
+          </ul>
         </div>
-        <label class="field">
-          <span>Message</span>
-          <textarea name="message" rows="4" required placeholder="Tell me about the inquiry…"></textarea>
-        </label>
-        <button type="submit" class="btn btn--solid contact__submit">Send inquiry</button>
-        <p class="contact__status" id="contact-status" role="status" aria-live="polite"></p>
-      </form>
-
-      <div class="contact__links">
-        <a class="contact__link" href="https://www.instagram.com/omarchaconjr/" target="_blank" rel="noopener">Instagram&nbsp;↗</a>
-        <a class="contact__link" href="https://robischongallery.com/" target="_blank" rel="noopener">Robischon&nbsp;Gallery&nbsp;↗</a>
-        <a class="contact__link" href="https://www.artnet.com/artists/omar-chac%C3%B3n/" target="_blank" rel="noopener">Artnet&nbsp;↗</a>
       </div>
-    </div>
-    <footer class="footer">
-      <span>© <span id="year"></span> Omar Chacón</span>
-      <span class="footer__credit">Every drip, unique.</span>
-    </footer>
-  </section>
+    </section>
 
-  <!-- EXHIBITION MODE — fullscreen one-work-at-a-time slideshow -->
-  <div class="exhibit" id="exhibit" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Exhibition mode">
-    <div class="exhibit__progress"><span id="exhibit-fill"></span></div>
-    <header class="exhibit__bar">
-      <span class="exhibit__brand">Omar&nbsp;Chacón — Exhibition</span>
-      <span class="exhibit__counter" id="exhibit-counter">1 / 5</span>
-      <button class="exhibit__close" id="exhibit-close" aria-label="Exit exhibition">Exit&nbsp;✕</button>
-    </header>
+    <!-- 04 · ARTICLES / MEDIA -->
+    <section class="panel" id="articles" aria-labelledby="articles-title" aria-hidden="true" hidden>
+      <div class="panel__chrome">
+        <p class="panel__eyebrow">04 — Articles</p>
+        <button class="panel__close" data-home aria-label="Close section">Close&nbsp;✕</button>
+      </div>
+      <div class="panel__body">
+        <header class="panel__head">
+          <h2 class="panel__title" id="articles-title">What the work is doing.</h2>
+          <p class="panel__intro">Press and writing about the paintings. Full press releases available on request.</p>
+        </header>
+        <div class="press__grid">
+          <blockquote class="press__card">
+            <p>“Geometric and organic elements build intricate compositions that beckon the viewer to take a closer look.”</p>
+            <cite>Robischon Gallery</cite>
+          </blockquote>
+          <blockquote class="press__card">
+            <p>“A brush is never used. The dried acrylic forms become pliable building blocks — the basis of his paintings.”</p>
+            <cite>Fouladi Projects</cite>
+          </blockquote>
+          <blockquote class="press__card">
+            <p>“Paint pouring on a separate surface that, once dried, migrates to the canvas in mosaic-like tiles — invoking concepts of the masses.”</p>
+            <cite>Ringling College</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
 
-    <button class="exhibit__nav exhibit__nav--prev" id="exhibit-prev" aria-label="Previous work">‹</button>
-    <figure class="exhibit__stage">
-      <img id="exhibit-img" src="" alt="" />
-      <figcaption>
-        <strong id="exhibit-title"></strong>
-        <span id="exhibit-meta"></span>
-      </figcaption>
-    </figure>
-    <button class="exhibit__nav exhibit__nav--next" id="exhibit-next" aria-label="Next work">›</button>
+    <!-- 05 · CONTACT -->
+    <section class="panel" id="contact" aria-labelledby="contact-title" aria-hidden="true" hidden>
+      <div class="panel__chrome">
+        <p class="panel__eyebrow">05 — Contact</p>
+        <button class="panel__close" data-home aria-label="Close section">Close&nbsp;✕</button>
+      </div>
+      <div class="panel__body">
+        <div class="contact">
+          <header class="panel__head">
+            <h2 class="panel__title" id="contact-title">Let’s gather.</h2>
+            <p class="panel__intro">For studio visits, acquisitions, and exhibition inquiries.</p>
+          </header>
 
-    <div class="exhibit__dots" id="exhibit-dots" aria-hidden="true"></div>
+          <form class="contact__form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Replace with the artist's Web3Forms access key (free at web3forms.com) -->
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+            <input type="hidden" name="subject" value="New inquiry from omarchaconart.com" />
+            <input type="hidden" name="from_name" value="Omar Chacón website" />
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+
+            <div class="contact__row">
+              <label class="field"><span>Name</span><input type="text" name="name" required autocomplete="name" /></label>
+              <label class="field"><span>Email</span><input type="email" name="email" required autocomplete="email" /></label>
+            </div>
+            <label class="field"><span>Message</span><textarea name="message" rows="4" required placeholder="Tell me about the inquiry…"></textarea></label>
+            <button type="submit" class="btn btn--solid">Send inquiry</button>
+            <p class="contact__status" id="contact-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <!-- Newsletter signup (wire to a provider before launch) -->
+          <form class="signup" id="signup-form">
+            <p class="signup__label">Or join the list — new work &amp; show news.</p>
+            <div class="signup__row">
+              <input type="email" name="newsletter" placeholder="you@email.com" aria-label="Email for newsletter" required />
+              <button type="submit" class="btn btn--ghost">Subscribe</button>
+            </div>
+            <p class="contact__status" id="signup-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="contact__links">
+            <a class="contact__link" href="https://www.instagram.com/omarchaconjr/" target="_blank" rel="noopener">Instagram&nbsp;↗</a>
+            <a class="contact__link" href="https://robischongallery.com/" target="_blank" rel="noopener">Robischon&nbsp;Gallery&nbsp;↗</a>
+            <a class="contact__link" href="https://www.artnet.com/artists/omar-chac%C3%B3n/" target="_blank" rel="noopener">Artnet&nbsp;↗</a>
+          </div>
+
+          <footer class="footer">
+            <span>© <span id="year"></span> Omar Chacón</span>
+            <span class="footer__credit">Every drip, unique.</span>
+          </footer>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- LIGHTBOX -->
@@ -335,6 +454,7 @@
     <button class="lightbox__nav lightbox__nav--next" aria-label="Next">›</button>
   </div>
 
+  <script src="assets/works/catalog.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

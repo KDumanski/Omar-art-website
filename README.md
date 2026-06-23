@@ -1,6 +1,6 @@
 # Omar Chacón — Painter
 
-A one-page portfolio site for the Colombian-American painter **Omar Chacón** (b. Bogotá, 1979; based in Queens, New York). Chacón builds vivid, mosaic-like abstractions from thousands of hand-cast acrylic drips — *a brush is never used.* The site lets the work carry it: a single painting fills the hero full-bleed, with the artist's name set quietly over a soft scrim, then opens into a calm gallery, process, about, and exhibitions.
+A one-page portfolio site for the Colombian-American painter **Omar Chacón** (b. Bogotá, 1979; based in Queens, New York). Chacón builds vivid, mosaic-like abstractions from thousands of hand-cast acrylic drips — *a brush is never used.* The site lets the work carry it: the paintings crossfade full-bleed across the hero, with the artist's name set quietly over a soft scrim, then it opens into a calm gallery, process, about, and exhibitions.
 
 ## What's included
 
@@ -12,7 +12,7 @@ A one-page portfolio site for the Colombian-American painter **Omar Chacón** (b
 
 ## Interactive elements
 
-- **Full-bleed hero** — a single painting fills the screen behind the artist's name, with a slow, near-imperceptible drift (disabled under `prefers-reduced-motion`).
+- **Full-bleed hero** — a crossfading slideshow of paintings (each fading in, holding, then handing off to the next) plays full-screen behind the artist's name, with a slow, near-imperceptible drift. Under `prefers-reduced-motion` the crossfade and drift are disabled and a single still painting is held.
 - **Exhibition mode** — a fullscreen, one-work-at-a-time slideshow with keyboard nav (←/→/Esc), a progress bar, slide counter, and dot navigation.
 - **Lightbox gallery** — keyboard-navigable (←/→/Esc), asymmetric golden-ratio grid, with 3D tilt-toward-cursor and a spotlight that follows the pointer.
 - **Status chips** — each work is tagged Available / Sold / Commissioned.
