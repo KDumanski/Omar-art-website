@@ -62,12 +62,17 @@
     <span class="loader__name">Omar&nbsp;Chacón</span>
   </div>
 
-  <!-- Persistent top bar: brand returns home; theme toggle -->
+  <!-- Persistent top bar: section nav (Barbara Takenaga–style) + theme toggle -->
   <header class="topbar">
-    <button class="brand" data-home aria-label="Omar Chacón — home">
-      <span class="brand__mark" aria-hidden="true"></span>
-      <span class="brand__name">Omar&nbsp;Chacón</span>
-    </button>
+    <nav class="topnav" aria-label="Sections">
+      <button class="topnav__link" data-open="paintings">Paintings</button>
+      <button class="topnav__link" data-open="resume">Resume</button>
+      <button class="topnav__link" data-open="press">Press</button>
+      <button class="topnav__link" data-open="installations">Installations</button>
+      <button class="topnav__link" data-open="news">News</button>
+      <button class="topnav__link" data-open="contact">Contact</button>
+      <a class="topnav__link topnav__ig" href="https://www.instagram.com/omarchaconjr/" target="_blank" rel="noopener">Instagram&nbsp;↗</a>
+    </nav>
     <button class="theme" id="theme-toggle" aria-label="Toggle light and dark mode">
       <span class="theme__dot"></span>
     </button>
@@ -75,8 +80,8 @@
 
   <!-- ===================================================================
        LANDING — one fit-to-screen page. A painting fills the background;
-       the name + section buttons sit over it. Nothing scrolls here.
-       Click a section button to open it full-screen.
+       the artist's name sits quietly over it. Navigation lives in the top
+       bar; click a section there to open it full-screen.
   ==================================================================== -->
   <main class="stage" id="stage">
     <div class="stage__bg" id="stage-bg" aria-hidden="true">
@@ -88,16 +93,7 @@
     <div class="stage__scrim" aria-hidden="true"></div>
 
     <div class="stage__center">
-      <p class="stage__eyebrow">Painter &nbsp;·&nbsp; Bogotá &nbsp;·&nbsp; New York</p>
       <h1 class="stage__name">Omar&nbsp;Chacón</h1>
-
-      <nav class="menu" aria-label="Sections">
-        <button class="menu__item" data-open="paintings"><span class="menu__idx">01</span><span class="menu__label">Paintings</span></button>
-        <button class="menu__item" data-open="about"><span class="menu__idx">02</span><span class="menu__label">About</span></button>
-        <button class="menu__item" data-open="cv"><span class="menu__idx">03</span><span class="menu__label">CV</span></button>
-        <button class="menu__item" data-open="articles"><span class="menu__idx">04</span><span class="menu__label">Articles</span></button>
-        <button class="menu__item" data-open="contact"><span class="menu__idx">05</span><span class="menu__label">Contact</span></button>
-      </nav>
     </div>
 
     <button class="stage__cycle" id="stage-cycle" aria-label="Show the next painting">
@@ -110,10 +106,10 @@
   ==================================================================== -->
   <div class="panels" id="panels">
 
-    <!-- 01 · PAINTINGS — drill down by year -->
+    <!-- PAINTINGS — drill down by year -->
     <section class="panel" id="paintings" aria-labelledby="paintings-title" aria-hidden="true" hidden>
       <div class="panel__chrome">
-        <p class="panel__eyebrow">01 — Paintings</p>
+        <p class="panel__eyebrow">Paintings</p>
         <button class="panel__close" data-home aria-label="Close section">Close&nbsp;✕</button>
       </div>
       <div class="panel__body">
@@ -154,13 +150,14 @@
       </div>
     </section>
 
-    <!-- 02 · ABOUT -->
-    <section class="panel" id="about" aria-labelledby="about-title" aria-hidden="true" hidden>
+    <!-- RESUME — bio (artist statement) + full CV timeline -->
+    <section class="panel" id="resume" aria-labelledby="resume-title" aria-hidden="true" hidden>
       <div class="panel__chrome">
-        <p class="panel__eyebrow">02 — About</p>
+        <p class="panel__eyebrow">Resume</p>
         <button class="panel__close" data-home aria-label="Close section">Close&nbsp;✕</button>
       </div>
       <div class="panel__body">
+        <!-- Bio -->
         <div class="about">
           <div class="about__media">
             <div class="about__frame">
@@ -168,7 +165,7 @@
             </div>
           </div>
           <div class="about__text">
-            <h2 class="panel__title" id="about-title">From Bogotá to a Queens studio.</h2>
+            <h2 class="panel__title" id="resume-title">From Bogotá to a Queens studio.</h2>
             <p>Omar Chacón was born in Bogotá, Colombia and moved to the United States
               with his family as a child. He earned a BFA from Ringling College of
               Art and Design and an MFA in painting from the San Francisco Art
@@ -193,24 +190,18 @@
               Projects (San Francisco), and Brunnhofer Galerie (Linz, Austria).</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- 03 · CV -->
-    <section class="panel" id="cv" aria-labelledby="cv-title" aria-hidden="true" hidden>
-      <div class="panel__chrome">
-        <p class="panel__eyebrow">03 — CV</p>
-        <button class="panel__close" data-home aria-label="Close section">Close&nbsp;✕</button>
-      </div>
-      <div class="panel__body">
-        <header class="panel__head">
-          <h2 class="panel__title" id="cv-title">A working record.</h2>
+        <!-- CV -->
+        <header class="panel__head resume__cv-head">
+          <h2 class="panel__title">A working record.</h2>
           <p class="panel__intro">Education, awards, exhibitions, commissions, and press.</p>
         </header>
 
         <div class="cv">
           <ul class="timeline">
             <li><span class="timeline__year">Now</span><span class="timeline__what"><span class="cv__type">Represented</span><strong>Robischon Gallery</strong> — Denver, CO</span></li>
+
+            <li><span class="timeline__year">2026</span><span class="timeline__what"><span class="cv__type">Group</span><strong>Ostinatos</strong> — Robischon Gallery, Denver, CO</span></li>
 
             <li><span class="timeline__year">2024</span><span class="timeline__what">
               <span class="cv__line"><span class="cv__type cv__type--solo">Solo</span><strong>NIMBA</strong> — Robischon Gallery, Denver, CO</span>
@@ -362,16 +353,16 @@
       </div>
     </section>
 
-    <!-- 04 · ARTICLES / MEDIA -->
-    <section class="panel" id="articles" aria-labelledby="articles-title" aria-hidden="true" hidden>
+    <!-- PRESS — quotes, the press archive, and downloadable pieces -->
+    <section class="panel" id="press" aria-labelledby="press-title" aria-hidden="true" hidden>
       <div class="panel__chrome">
-        <p class="panel__eyebrow">04 — Articles</p>
+        <p class="panel__eyebrow">Press</p>
         <button class="panel__close" data-home aria-label="Close section">Close&nbsp;✕</button>
       </div>
       <div class="panel__body">
         <header class="panel__head">
-          <h2 class="panel__title" id="articles-title">What the work is doing.</h2>
-          <p class="panel__intro">Press and writing about the paintings. Full press releases available on request.</p>
+          <h2 class="panel__title" id="press-title">What the work is doing.</h2>
+          <p class="panel__intro">Selected reviews, features, and writing on the paintings — with original scans and full pieces below.</p>
         </header>
         <div class="press__grid">
           <blockquote class="press__card">
@@ -383,17 +374,107 @@
             <cite>Fouladi Projects</cite>
           </blockquote>
           <blockquote class="press__card">
+            <p>“Insistently physical and overtly time-intensive — slow collaborations between maker and material.”</p>
+            <cite>DeWitt Cheng · East Bay Express</cite>
+          </blockquote>
+          <blockquote class="press__card">
             <p>“Paint pouring on a separate surface that, once dried, migrates to the canvas in mosaic-like tiles — invoking concepts of the masses.”</p>
             <cite>Ringling College</cite>
           </blockquote>
         </div>
+
+        <header class="panel__head press__sub">
+          <h3 class="press__subtitle">From the archive</h3>
+          <p class="panel__intro">Original press clippings — click any page to read it full size.</p>
+        </header>
+        <div class="gallery gallery--tall" data-lightbox>
+          <button class="shot" data-cap="Arte al Límite — “A Trip to Color,” 2012"><img src="assets/press/arte-al-limite-2012.jpg" alt="Arte al Límite feature, 2012" loading="lazy" /></button>
+          <button class="shot" data-cap="Art &amp; Antiques — “Emerging Artists,” 2007"><img src="assets/press/art-and-antiques-2007.jpg" alt="Art & Antiques, Emerging Artists, 2007" loading="lazy" /></button>
+          <button class="shot" data-cap="Art &amp; Antiques — “Emerging Artists,” 2007"><img src="assets/press/art-and-antiques-2007-b.jpg" alt="Art & Antiques, Emerging Artists, 2007, page two" loading="lazy" /></button>
+          <button class="shot" data-cap="Miami University Young Painters Award, 2007"><img src="assets/press/young-painters-2007.jpg" alt="Miami University Young Painters Award feature, 2007" loading="lazy" /></button>
+          <button class="shot" data-cap="Miami University Young Painters Award, 2007"><img src="assets/press/young-painters-2007-b.jpg" alt="Miami University Young Painters Award, 2007, issue cover" loading="lazy" /></button>
+          <button class="shot" data-cap="Art in America — “Report from San Francisco I,” 2006"><img src="assets/press/art-in-america-2006.jpg" alt="Art in America, Report from San Francisco, 2006" loading="lazy" /></button>
+          <button class="shot" data-cap="Art in America — “Report from San Francisco I,” 2006"><img src="assets/press/art-in-america-2006-b.jpg" alt="Art in America, Report from San Francisco, 2006, issue" loading="lazy" /></button>
+          <button class="shot" data-cap="Artweek, 2005"><img src="assets/press/artweek-2005.jpg" alt="Artweek feature, 2005" loading="lazy" /></button>
+          <button class="shot" data-cap="Artweek, 2005"><img src="assets/press/artweek-2005-b.jpg" alt="Artweek, 2005, article" loading="lazy" /></button>
+        </div>
+
+        <div class="press__downloads">
+          <a class="contact__link" href="assets/press/artist-statement.pdf" target="_blank" rel="noopener">Artist statement (PDF)&nbsp;↗</a>
+          <a class="contact__link" href="assets/press/east-bay-express-2010.pdf" target="_blank" rel="noopener">East Bay Express — “Stratigraphic Aggregates,” 2010 (PDF)&nbsp;↗</a>
+        </div>
       </div>
     </section>
 
-    <!-- 05 · CONTACT -->
+    <!-- INSTALLATIONS — the paintings hanging in space, by show + year -->
+    <section class="panel" id="installations" aria-labelledby="installations-title" aria-hidden="true" hidden>
+      <div class="panel__chrome">
+        <p class="panel__eyebrow">Installations</p>
+        <button class="panel__close" data-home aria-label="Close section">Close&nbsp;✕</button>
+      </div>
+      <div class="panel__body">
+        <header class="panel__head">
+          <h2 class="panel__title" id="installations-title">In the room.</h2>
+          <p class="panel__intro">The work hanging in space — selected solo exhibitions. Click any view to enlarge.</p>
+        </header>
+
+        <article class="install-show">
+          <header class="install-show__head">
+            <h3 class="install-show__title">Variaciones Chuecas</h3>
+            <p class="install-show__meta">Robischon Gallery, Denver · 2022</p>
+          </header>
+          <div class="gallery" data-lightbox>
+            <button class="shot" data-cap="Variaciones Chuecas — Robischon Gallery, Denver, 2022"><img src="assets/installations/variaciones-chuecas-2022-1.jpg" alt="Variaciones Chuecas installation view, Robischon Gallery, 2022" loading="lazy" /></button>
+            <button class="shot" data-cap="Variaciones Chuecas — Robischon Gallery, Denver, 2022"><img src="assets/installations/variaciones-chuecas-2022-2.jpg" alt="Variaciones Chuecas installation view, Robischon Gallery, 2022" loading="lazy" /></button>
+            <button class="shot" data-cap="Variaciones Chuecas — Robischon Gallery, Denver, 2022"><img src="assets/installations/variaciones-chuecas-2022-3.jpg" alt="Variaciones Chuecas installation view, Robischon Gallery, 2022" loading="lazy" /></button>
+            <button class="shot" data-cap="Variaciones Chuecas — Robischon Gallery, Denver, 2022"><img src="assets/installations/variaciones-chuecas-2022-4.jpg" alt="Variaciones Chuecas installation view, Robischon Gallery, 2022" loading="lazy" /></button>
+            <button class="shot" data-cap="Variaciones Chuecas — Robischon Gallery, Denver, 2022"><img src="assets/installations/variaciones-chuecas-2022-5.jpg" alt="Variaciones Chuecas installation view, Robischon Gallery, 2022" loading="lazy" /></button>
+            <button class="shot" data-cap="Variaciones Chuecas — Robischon Gallery, Denver, 2022"><img src="assets/installations/variaciones-chuecas-2022-6.jpg" alt="Variaciones Chuecas installation view, Robischon Gallery, 2022" loading="lazy" /></button>
+            <button class="shot" data-cap="Variaciones Chuecas — Robischon Gallery, Denver, 2022"><img src="assets/installations/variaciones-chuecas-2022-7.jpg" alt="Variaciones Chuecas installation view, Robischon Gallery, 2022" loading="lazy" /></button>
+            <button class="shot" data-cap="Variaciones Chuecas — Robischon Gallery, Denver, 2022"><img src="assets/installations/variaciones-chuecas-2022-8.jpg" alt="Variaciones Chuecas installation view, Robischon Gallery, 2022" loading="lazy" /></button>
+            <button class="shot" data-cap="Variaciones Chuecas — Robischon Gallery, Denver, 2022"><img src="assets/installations/variaciones-chuecas-2022-9.jpg" alt="Variaciones Chuecas installation view, Robischon Gallery, 2022" loading="lazy" /></button>
+            <button class="shot" data-cap="Variaciones Chuecas — Robischon Gallery, Denver, 2022"><img src="assets/installations/variaciones-chuecas-2022-10.jpg" alt="Variaciones Chuecas installation view, Robischon Gallery, 2022" loading="lazy" /></button>
+          </div>
+        </article>
+
+        <article class="install-show">
+          <header class="install-show__head">
+            <h3 class="install-show__title">Fluid Borders</h3>
+            <p class="install-show__meta">Margaret Thatcher Projects, New York · 2021</p>
+            <a class="install-show__link" href="assets/installations/fluid-borders-2021-press-release.pdf" target="_blank" rel="noopener">Press release (PDF)&nbsp;↗</a>
+          </header>
+          <div class="gallery" data-lightbox>
+            <button class="shot" data-cap="Fluid Borders — Margaret Thatcher Projects, New York, 2021"><img src="assets/installations/fluid-borders-2021-1.jpg" alt="Fluid Borders installation view, Margaret Thatcher Projects, 2021" loading="lazy" /></button>
+            <button class="shot" data-cap="Fluid Borders — Margaret Thatcher Projects, New York, 2021"><img src="assets/installations/fluid-borders-2021-2.jpg" alt="Fluid Borders installation view, Margaret Thatcher Projects, 2021" loading="lazy" /></button>
+            <button class="shot" data-cap="Fluid Borders — Margaret Thatcher Projects, New York, 2021"><img src="assets/installations/fluid-borders-2021-3.jpg" alt="Fluid Borders installation view, Margaret Thatcher Projects, 2021" loading="lazy" /></button>
+            <button class="shot" data-cap="Fluid Borders — Margaret Thatcher Projects, New York, 2021"><img src="assets/installations/fluid-borders-2021-4.jpg" alt="Fluid Borders installation view, Margaret Thatcher Projects, 2021" loading="lazy" /></button>
+            <button class="shot" data-cap="Fluid Borders — Margaret Thatcher Projects, New York, 2021"><img src="assets/installations/fluid-borders-2021-5.jpg" alt="Fluid Borders installation view, Margaret Thatcher Projects, 2021" loading="lazy" /></button>
+            <button class="shot" data-cap="Fluid Borders — Margaret Thatcher Projects, New York, 2021"><img src="assets/installations/fluid-borders-2021-6.jpg" alt="Fluid Borders installation view, Margaret Thatcher Projects, 2021" loading="lazy" /></button>
+            <button class="shot" data-cap="Fluid Borders — Margaret Thatcher Projects, New York, 2021"><img src="assets/installations/fluid-borders-2021-7.jpg" alt="Fluid Borders installation view, Margaret Thatcher Projects, 2021" loading="lazy" /></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- NEWS — upcoming shows / announcements (empty until a show is booked) -->
+    <section class="panel" id="news" aria-labelledby="news-title" aria-hidden="true" hidden>
+      <div class="panel__chrome">
+        <p class="panel__eyebrow">News</p>
+        <button class="panel__close" data-home aria-label="Close section">Close&nbsp;✕</button>
+      </div>
+      <div class="panel__body">
+        <div class="news-empty">
+          <h2 class="panel__title" id="news-title">Nothing on the calendar — yet.</h2>
+          <p class="panel__intro">No exhibitions are currently scheduled. New shows, openings, and announcements will appear here.</p>
+          <button class="btn btn--solid" data-open="contact">Join the list</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section class="panel" id="contact" aria-labelledby="contact-title" aria-hidden="true" hidden>
       <div class="panel__chrome">
-        <p class="panel__eyebrow">05 — Contact</p>
+        <p class="panel__eyebrow">Contact</p>
         <button class="panel__close" data-home aria-label="Close section">Close&nbsp;✕</button>
       </div>
       <div class="panel__body">

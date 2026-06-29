@@ -10,7 +10,7 @@
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isCoarse = window.matchMedia('(hover: none), (pointer: coarse)').matches;
-  const PANELS = ['paintings', 'about', 'cv', 'articles', 'contact'];
+  const PANELS = ['paintings', 'resume', 'press', 'installations', 'news', 'contact'];
 
   /* ----------------------------------------------------------
      1. WORKS — loaded from the generated catalog
@@ -86,7 +86,13 @@
   if (grid) {
     grid.addEventListener('click', (e) => {
       const card = e.target.closest('.art');
-      if (card) openLightbox(+card.dataset.index);
+      if (!card) return;
+      // the lightbox steps through the currently-filtered paintings
+      const list = currentList.map((a) => ({
+        src: a.src,
+        cap: `${a.title} — ${[a.surface, a.dims, a.year].filter(Boolean).join(', ')}`,
+      }));
+      openLightbox(list, +card.dataset.index);
     });
     applyFilters(); // initial render
   }
@@ -107,18 +113,21 @@
     });
   }
 
-  /* ---- Lightbox ---- */
+  /* ---- Lightbox — generic: steps through any list of {src, cap} ---- */
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img');
   const lbCap = document.getElementById('lightbox-cap');
-  let current = 0;
+  let lbList = [];
+  let lbIndex = 0;
 
-  function openLightbox(i) {
-    current = i;
-    const art = currentList[i];
-    lbImg.src = art.src;
-    lbImg.alt = art.title;
-    lbCap.textContent = `${art.title} — ${[art.surface, art.dims, art.year].filter(Boolean).join(', ')}`;
+  function openLightbox(list, i) {
+    if (!list || !list.length) return;
+    lbList = list;
+    lbIndex = i;
+    const item = lbList[lbIndex];
+    lbImg.src = item.src;
+    lbImg.alt = item.cap || '';
+    lbCap.textContent = item.cap || '';
     lb.classList.add('is-open');
     lb.setAttribute('aria-hidden', 'false');
   }
@@ -126,7 +135,10 @@
     lb.classList.remove('is-open');
     lb.setAttribute('aria-hidden', 'true');
   }
-  function step(dir) { openLightbox((current + dir + currentList.length) % currentList.length); }
+  function step(dir) {
+    if (!lbList.length) return;
+    openLightbox(lbList, (lbIndex + dir + lbList.length) % lbList.length);
+  }
 
   if (lb) {
     lb.querySelector('.lightbox__close').addEventListener('click', closeLightbox);
@@ -140,6 +152,21 @@
       if (e.key === 'ArrowRight') step(1);
     });
   }
+
+  // Static image galleries (installations + press archive) reuse the lightbox.
+  // Each [data-lightbox] container steps through its own .shot images.
+  document.querySelectorAll('[data-lightbox]').forEach((group) => {
+    const shots = Array.from(group.querySelectorAll('.shot'));
+    const list = shots.map((b) => {
+      const img = b.querySelector('img');
+      return { src: img.getAttribute('src'), cap: b.dataset.cap || img.getAttribute('alt') || '' };
+    });
+    group.addEventListener('click', (e) => {
+      const shot = e.target.closest('.shot');
+      if (!shot) return;
+      openLightbox(list, shots.indexOf(shot));
+    });
+  });
 
   /* ----------------------------------------------------------
      3. STAGE BACKGROUND — crossfade through a few paintings
@@ -167,6 +194,7 @@
   const stage = document.getElementById('stage');
   const panelEls = {};
   PANELS.forEach((id) => { panelEls[id] = document.getElementById(id); });
+  const navLinks = Array.from(document.querySelectorAll('.topnav__link[data-open]'));
   let lastTrigger = null; // restore focus here when we return home
 
   function openPanel(el) {
@@ -193,6 +221,9 @@
     // toggle stage / body state
     document.body.classList.toggle('is-open', known);
     if (stage) stage.setAttribute('aria-hidden', known ? 'true' : 'false');
+
+    // highlight the active section in the top nav
+    navLinks.forEach((l) => l.classList.toggle('is-active', l.dataset.open === id));
 
     // open the target panel, close the rest
     PANELS.forEach((pid) => {

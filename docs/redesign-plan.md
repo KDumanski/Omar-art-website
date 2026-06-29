@@ -62,3 +62,34 @@ interaction built from Omar's own method (poured, hand-cast acrylic drips).
 - Need more images + per-work years/titles from Omar (he's Dropboxing a set). The
   year galleries are sparse until then.
 - Drip is v1 — meant to be reacted to, not final.
+
+---
+
+## Round 2 — Barbara Takenaga layout + content (2026-06-29)
+
+Source: Omar's emails (Jun 24 & 26, "I added things to the notes") + the shared
+**"Website Notes"** Google Doc + his CV doc.
+
+- **Nav moved to a persistent top bar** (Barbara Takenaga model), using the old
+  "Painter · Bogotá · New York" eyebrow type: **Paintings · Resume · Press ·
+  Installations · News · Contact** + an Instagram link. Active section underlines.
+- **Removed** the top-left signature/mark and the centered "Painter · Bogotá ·
+  New York" tagline. "Omar Chacón" stays centered on the landing.
+- **CV → Resume**: now leads with the bio + artist statement (the old About
+  section, folded in per "bio CV at top"), then the full timeline; added the
+  **2026 Ostinatos** group show.
+- **Articles → Press**: gallery quotes (added a DeWitt Cheng / East Bay Express
+  pull-quote) + a **press archive gallery** (9 scanned clippings, lightbox) +
+  downloadable artist statement and East Bay Express PDFs.
+- **Installations** (new): by show/year — *Variaciones Chuecas* (Robischon, 2022,
+  10 views) and *Fluid Borders* (Margaret Thatcher Projects, 2021, 7 views) +
+  the 2021 press-release PDF.
+- **News** (new): empty state until a show is booked.
+- Lightbox generalized so any `[data-lightbox]` `.shot` grid (installations +
+  press) reuses it. Images pulled from Omar's Drive and optimized for web
+  (≤2200px, ~0.15–1 MB) into `assets/installations/` and `assets/press/`.
+- Added `CNAME` → **omarchaconart.com** (custom domain; DNS still to be pointed).
+
+Still parked: the "drip" interaction (Round 1, phase 2), the interactive hook,
+and the show-invite pop-up. The "gallery-show testimonial" note from Omar is
+vague — left for him to clarify (which show, which quote).
