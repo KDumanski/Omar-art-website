@@ -1,0 +1,923 @@
+{
+  "shows": [
+    {
+      "slug": "fluid-borders",
+      "title": "Fluid Borders",
+      "gallery": "Margaret Thatcher Projects",
+      "city": "New York",
+      "year": 2021,
+      "blurb": "Hand-cast acrylic drips, peeled and collaged — a brush is never used.",
+      "sort_order": 0
+    },
+    {
+      "slug": "variaciones-chuecas",
+      "title": "Variaciones Chuecas",
+      "gallery": "Robischon Gallery",
+      "city": "Denver",
+      "year": 2022,
+      "blurb": "A solo survey of the mosaic-drip canvases.",
+      "sort_order": 1
+    },
+    {
+      "slug": "sin-seine",
+      "title": "Sin Seine",
+      "gallery": "Fouladi Projects",
+      "city": "San Francisco",
+      "year": 2023,
+      "blurb": "Recent works on canvas and paper.",
+      "sort_order": 2
+    },
+    {
+      "slug": "adapt-applied-matter",
+      "title": "Adapt · Applied Matter",
+      "gallery": "Robischon Gallery",
+      "city": "Denver",
+      "year": 2020,
+      "blurb": "Group exhibitions at Robischon Gallery.",
+      "sort_order": 3
+    },
+    {
+      "slug": "bacanales",
+      "title": "Bacanales",
+      "gallery": "Margaret Thatcher Projects",
+      "city": "New York",
+      "year": 2012,
+      "blurb": "The early Bacanal series: tropical, operatic abstractions.",
+      "sort_order": 4
+    },
+    {
+      "slug": "ostinatos",
+      "title": "Ostinatos",
+      "gallery": "Robischon Gallery",
+      "city": "Denver",
+      "year": 2026,
+      "blurb": "",
+      "sort_order": 5
+    },
+    {
+      "slug": "nimba",
+      "title": "NIMBA",
+      "gallery": "Robischon Gallery",
+      "city": "Denver",
+      "year": 2024,
+      "blurb": "",
+      "sort_order": 6
+    },
+    {
+      "slug": "chromatic-echoes",
+      "title": "Chromatic Echoes",
+      "gallery": "Ringling College of Art and Design",
+      "city": "Sarasota",
+      "year": 2024,
+      "blurb": "",
+      "sort_order": 7
+    },
+    {
+      "slug": "chaotic-precisions",
+      "title": "Chaotic Precisions",
+      "gallery": "Margaret Thatcher Projects",
+      "city": "New York",
+      "year": 2024,
+      "blurb": "With Gaston Bertin.",
+      "sort_order": 8
+    },
+    {
+      "slug": "cirio-totale",
+      "title": "Cirio Totale",
+      "gallery": "Margaret Thatcher Projects",
+      "city": "New York",
+      "year": 2023,
+      "blurb": "",
+      "sort_order": 9
+    },
+    {
+      "slug": "mesalinas-operaticas",
+      "title": "Mesalinas Operáticas",
+      "gallery": "Fouladi Projects",
+      "city": "San Francisco",
+      "year": 2020,
+      "blurb": "",
+      "sort_order": 10
+    },
+    {
+      "slug": "ohio-criollo",
+      "title": "Ohio Criollo",
+      "gallery": "Margaret Thatcher Projects",
+      "city": "New York",
+      "year": 2019,
+      "blurb": "",
+      "sort_order": 11
+    },
+    {
+      "slug": "las-mesalinas",
+      "title": "Las Mesalinas y Otros Ensayos",
+      "gallery": "Margaret Thatcher Projects",
+      "city": "New York",
+      "year": 2015,
+      "blurb": "",
+      "sort_order": 12
+    },
+    {
+      "slug": "stratigraphic",
+      "title": "Stratigraphic",
+      "gallery": "Chandra Cerrito Contemporary",
+      "city": "Oakland",
+      "year": 2010,
+      "blurb": "",
+      "sort_order": 13
+    }
+  ],
+  "works": [
+    {
+      "slug": "bdpm-ix-2023",
+      "title": "BDPM IX",
+      "year": 2023,
+      "medium": "Acrylic on canvas",
+      "dimensions": "7.25 × 11.5 in",
+      "image": "/assets/works/bdpm-ix-2023.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "sin-seine",
+      "sort_order": 0
+    },
+    {
+      "slug": "cirio-ii-2023",
+      "title": "Cirio II",
+      "year": 2023,
+      "medium": "Acrylic on canvas",
+      "dimensions": "11.25 × 7.25 in",
+      "image": "/assets/works/cirio-ii-2023.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "sin-seine",
+      "sort_order": 1
+    },
+    {
+      "slug": "power-2023",
+      "title": "Power",
+      "year": 2023,
+      "medium": "Acrylic on paper",
+      "dimensions": "22.5 × 30 in",
+      "image": "/assets/works/power-2023.jpg",
+      "status": "Available",
+      "surface": "Paper",
+      "tier": "mediano",
+      "showSlug": "sin-seine",
+      "sort_order": 2
+    },
+    {
+      "slug": "vergel-2023",
+      "title": "Vergel",
+      "year": 2023,
+      "medium": "Acrylic on paper",
+      "dimensions": "22 × 30 in",
+      "image": "/assets/works/vergel-2023.jpg",
+      "status": "Available",
+      "surface": "Paper",
+      "tier": "mediano",
+      "showSlug": "sin-seine",
+      "sort_order": 3
+    },
+    {
+      "slug": "vesperal-2023",
+      "title": "Vesperal",
+      "year": 2023,
+      "medium": "Acrylic on paper",
+      "dimensions": "22.5 × 30 in",
+      "image": "/assets/works/vesperal-2023.jpg",
+      "status": "Available",
+      "surface": "Paper",
+      "tier": "mediano",
+      "showSlug": "sin-seine",
+      "sort_order": 4
+    },
+    {
+      "slug": "cirio-ii-2022",
+      "title": "Cirio II",
+      "year": 2022,
+      "medium": "Acrylic on canvas",
+      "dimensions": "11.25 × 7.25 in",
+      "image": "/assets/works/cirio-ii-2022.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "sin-seine",
+      "sort_order": 5
+    },
+    {
+      "slug": "bdpm-ni-2021",
+      "title": "BDPM NI",
+      "year": 2021,
+      "medium": "Acrylic on canvas",
+      "dimensions": "7.5 × 11.25 in",
+      "image": "/assets/works/bdpm-ni-2021.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "fluid-borders",
+      "sort_order": 6
+    },
+    {
+      "slug": "bdpm-nobsa-2021",
+      "title": "BDPM Nobsa",
+      "year": 2021,
+      "medium": "Acrylic on canvas",
+      "dimensions": "7.25 × 11.25 in",
+      "image": "/assets/works/bdpm-nobsa-2021.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "fluid-borders",
+      "sort_order": 7
+    },
+    {
+      "slug": "bdpm-vii-2021",
+      "title": "BDPM VII",
+      "year": 2021,
+      "medium": "Acrylic on canvas",
+      "dimensions": "7.25 × 11.25 in",
+      "image": "/assets/works/bdpm-vii-2021.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "fluid-borders",
+      "sort_order": 8
+    },
+    {
+      "slug": "chita-operatica-2021",
+      "title": "Chita Operatica",
+      "year": 2021,
+      "medium": "Acrylic on canvas",
+      "dimensions": "26 × 30 in",
+      "image": "/assets/works/chita-operatica-2021.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "mediano",
+      "showSlug": "fluid-borders",
+      "sort_order": 9
+    },
+    {
+      "slug": "galactic-elemental-2021",
+      "title": "Galactic Elemental",
+      "year": 2021,
+      "medium": "Acrylic on canvas",
+      "dimensions": "11.25 × 7.5 in",
+      "image": "/assets/works/galactic-elemental-2021.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "fluid-borders",
+      "sort_order": 10
+    },
+    {
+      "slug": "mesalina-negra-2021",
+      "title": "MESALINA NEGRA",
+      "year": 2021,
+      "medium": "Acrylic on canvas",
+      "dimensions": "24 × 20 in",
+      "image": "/assets/works/mesalina-negra-2021.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "mediano",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 11
+    },
+    {
+      "slug": "magdalena-galactica-2021",
+      "title": "Magdalena Galactica",
+      "year": 2021,
+      "medium": "Acrylic on canvas",
+      "dimensions": "42 × 54 in",
+      "image": "/assets/works/magdalena-galactica-2021.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "grande",
+      "showSlug": "fluid-borders",
+      "sort_order": 12
+    },
+    {
+      "slug": "molagavita-operatica-2021",
+      "title": "Molagavita Operatica",
+      "year": 2021,
+      "medium": "Acrylic on canvas",
+      "dimensions": "30 × 26 in",
+      "image": "/assets/works/molagavita-operatica-2021.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "mediano",
+      "showSlug": "fluid-borders",
+      "sort_order": 13
+    },
+    {
+      "slug": "power-white-2021",
+      "title": "POWER WHITE",
+      "year": 2021,
+      "medium": "Acrylic on canvas",
+      "dimensions": "7.25 × 11.25 in",
+      "image": "/assets/works/power-white-2021.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 14
+    },
+    {
+      "slug": "precusor-de-galacto-son-2021",
+      "title": "Precusor de Galacto Son",
+      "year": 2021,
+      "medium": "Acrylic on canvas",
+      "dimensions": "10.25 × 16 in",
+      "image": "/assets/works/precusor-de-galacto-son-2021.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "fluid-borders",
+      "sort_order": 15
+    },
+    {
+      "slug": "suprematist-blanco-mas-heyyy-2021",
+      "title": "SUPREMATIST BLANCO MAS HEYYY",
+      "year": 2021,
+      "medium": "Acrylic on canvas",
+      "dimensions": "30 × 26 in",
+      "image": "/assets/works/suprematist-blanco-mas-heyyy-2021.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "mediano",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 16
+    },
+    {
+      "slug": "snake-of-necklaces-2021",
+      "title": "Snake of Necklaces",
+      "year": 2021,
+      "medium": "Acrylic on canvas",
+      "dimensions": "54 × 42 in",
+      "image": "/assets/works/snake-of-necklaces-2021.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "grande",
+      "showSlug": "fluid-borders",
+      "sort_order": 17
+    },
+    {
+      "slug": "sob-messalina-galactica-2021",
+      "title": "Sob Messalina Galactica",
+      "year": 2021,
+      "medium": "Acrylic on paper",
+      "dimensions": "30 × 22 in",
+      "image": "/assets/works/sob-messalina-galactica-2021.jpg",
+      "status": "Available",
+      "surface": "Paper",
+      "tier": "mediano",
+      "showSlug": "fluid-borders",
+      "sort_order": 18
+    },
+    {
+      "slug": "bdpm-ii-2020",
+      "title": "BDPM II",
+      "year": 2020,
+      "medium": "Acrylic on canvas",
+      "dimensions": "7.25 × 11.25 in",
+      "image": "/assets/works/bdpm-ii-2020.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 19
+    },
+    {
+      "slug": "ensayo-v-2020",
+      "title": "Ensayo V",
+      "year": 2020,
+      "medium": "Acrylic on canvas",
+      "dimensions": "30 × 22 in",
+      "image": "/assets/works/ensayo-v-2020.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "mediano",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 20
+    },
+    {
+      "slug": "galactic-messalina-2020",
+      "title": "GALACTIC MESSALINA",
+      "year": 2020,
+      "medium": "Acrylic on canvas",
+      "dimensions": "30 × 26 in",
+      "image": "/assets/works/galactic-messalina-2020.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "mediano",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 21
+    },
+    {
+      "slug": "galactic-angelico-2020",
+      "title": "Galactic Angelico",
+      "year": 2020,
+      "medium": "Acrylic on paper",
+      "dimensions": "22 × 30 in",
+      "image": "/assets/works/galactic-angelico-2020.jpg",
+      "status": "Available",
+      "surface": "Paper",
+      "tier": "mediano",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 22
+    },
+    {
+      "slug": "galactic-randi-ii-2020",
+      "title": "Galactic Randi II",
+      "year": 2020,
+      "medium": "Acrylic on paper",
+      "dimensions": "22 × 30 in",
+      "image": "/assets/works/galactic-randi-ii-2020.jpg",
+      "status": "Available",
+      "surface": "Paper",
+      "tier": "mediano",
+      "showSlug": "fluid-borders",
+      "sort_order": 23
+    },
+    {
+      "slug": "itiquilla-2020",
+      "title": "ITIQUILLA",
+      "year": 2020,
+      "medium": "Acrylic on paper",
+      "dimensions": "30 × 22 in",
+      "image": "/assets/works/itiquilla-2020.jpg",
+      "status": "Available",
+      "surface": "Paper",
+      "tier": "mediano",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 24
+    },
+    {
+      "slug": "ich-operatica-2020",
+      "title": "Ich Operatica",
+      "year": 2020,
+      "medium": "Acrylic on canvas",
+      "dimensions": "30 × 26 in",
+      "image": "/assets/works/ich-operatica-2020.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "mediano",
+      "showSlug": "fluid-borders",
+      "sort_order": 25
+    },
+    {
+      "slug": "jiri-2020",
+      "title": "JIRI",
+      "year": 2020,
+      "medium": "Acrylic on paper",
+      "dimensions": "22 × 30 in",
+      "image": "/assets/works/jiri-2020.jpg",
+      "status": "Available",
+      "surface": "Paper",
+      "tier": "mediano",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 26
+    },
+    {
+      "slug": "pandemica-operatica-2020",
+      "title": "Pandemica Operatica",
+      "year": 2020,
+      "medium": "Acrylic on canvas",
+      "dimensions": "54 × 42 in",
+      "image": "/assets/works/pandemica-operatica-2020.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "grande",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 27
+    },
+    {
+      "slug": "v-venas-abiertas-2020",
+      "title": "V (VENAS ABIERTAS)",
+      "year": 2020,
+      "medium": "Acrylic on canvas",
+      "dimensions": "30 × 26 in",
+      "image": "/assets/works/v-venas-abiertas-2020.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "mediano",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 28
+    },
+    {
+      "slug": "variacion-de-bu-chueco-2020",
+      "title": "VARIACION DE BU CHUECO",
+      "year": 2020,
+      "medium": "Acrylic on paper",
+      "dimensions": "22 × 30 in",
+      "image": "/assets/works/variacion-de-bu-chueco-2020.jpg",
+      "status": "Available",
+      "surface": "Paper",
+      "tier": "mediano",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 29
+    },
+    {
+      "slug": "bacanal-guerito-2011",
+      "title": "Bacanal Guerito",
+      "year": 2011,
+      "medium": "Acrylic on canvas",
+      "dimensions": "7.5 × 11.25 in",
+      "image": "/assets/works/bacanal-guerito-2011.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "bacanales",
+      "sort_order": 30
+    },
+    {
+      "slug": "bacanal-miuc-2011",
+      "title": "Bacanal MIUC",
+      "year": 2011,
+      "medium": "Acrylic on canvas",
+      "dimensions": "10 × 16 in",
+      "image": "/assets/works/bacanal-miuc-2011.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "bacanales",
+      "sort_order": 31
+    },
+    {
+      "slug": "bacanal-npi-2011",
+      "title": "Bacanal NPI",
+      "year": 2011,
+      "medium": "Acrylic on canvas",
+      "dimensions": "10 × 16 in",
+      "image": "/assets/works/bacanal-npi-2011.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "bacanales",
+      "sort_order": 32
+    },
+    {
+      "slug": "bacanal-requete-guero-2011",
+      "title": "Bacanal Requete Guero",
+      "year": 2011,
+      "medium": "Acrylic on canvas",
+      "dimensions": "10 × 16 in",
+      "image": "/assets/works/bacanal-requete-guero-2011.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "bacanales",
+      "sort_order": 33
+    },
+    {
+      "slug": "monitos-ccxv-2011",
+      "title": "Monitos CCXV",
+      "year": 2011,
+      "medium": "Acrylic on canvas",
+      "dimensions": "16 × 10 in",
+      "image": "/assets/works/monitos-ccxv-2011.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "bacanales",
+      "sort_order": 34
+    },
+    {
+      "slug": "surata-ccxviii-2011",
+      "title": "Surata CCXVIII",
+      "year": 2011,
+      "medium": "Acrylic on canvas",
+      "dimensions": "31 × 23 in",
+      "image": "/assets/works/surata-ccxviii-2011.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "mediano",
+      "showSlug": "bacanales",
+      "sort_order": 35
+    },
+    {
+      "slug": "toribio-ccxvii-2011",
+      "title": "Toribio CCXVII",
+      "year": 2011,
+      "medium": "Acrylic on canvas",
+      "dimensions": "16 × 10 in",
+      "image": "/assets/works/toribio-ccxvii-2011.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "bacanales",
+      "sort_order": 36
+    },
+    {
+      "slug": "urbana-ccxx-2011",
+      "title": "Urbana CCXX",
+      "year": 2011,
+      "medium": "Acrylic on canvas",
+      "dimensions": "10 × 16 in",
+      "image": "/assets/works/urbana-ccxx-2011.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "bacanales",
+      "sort_order": 37
+    },
+    {
+      "slug": "zetaquira-ccxvi-2011",
+      "title": "Zetaquira CCXVI",
+      "year": 2011,
+      "medium": "Acrylic on canvas",
+      "dimensions": "10 × 16 in",
+      "image": "/assets/works/zetaquira-ccxvi-2011.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "bacanales",
+      "sort_order": 38
+    },
+    {
+      "slug": "untitled-painting-176-2008",
+      "title": "Untitled Painting # 176",
+      "year": 2008,
+      "medium": "Acrylic on canvas",
+      "dimensions": "11.25 × 7.5 in",
+      "image": "/assets/works/untitled-painting-176-2008.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "bacanales",
+      "sort_order": 39
+    },
+    {
+      "slug": "galactic-rand-variation-2020",
+      "title": "GALACTIC RAND (Variation)",
+      "year": 2020,
+      "medium": "Acrylic on canvas",
+      "dimensions": "10.25 × 16 in",
+      "image": "/assets/works/galactic-rand-variation-na.jpg",
+      "status": "Available",
+      "surface": "Canvas",
+      "tier": "pequeno",
+      "showSlug": "adapt-applied-matter",
+      "sort_order": 40
+    }
+  ],
+  "installations": [
+    {
+      "showSlug": "variaciones-chuecas",
+      "image": "/assets/installations/variaciones-chuecas-2022-1.jpg",
+      "caption": "Variaciones Chuecas — Robischon Gallery, Denver, 2022",
+      "sort_order": 0
+    },
+    {
+      "showSlug": "variaciones-chuecas",
+      "image": "/assets/installations/variaciones-chuecas-2022-10.jpg",
+      "caption": "Variaciones Chuecas — Robischon Gallery, Denver, 2022",
+      "sort_order": 1
+    },
+    {
+      "showSlug": "variaciones-chuecas",
+      "image": "/assets/installations/variaciones-chuecas-2022-2.jpg",
+      "caption": "Variaciones Chuecas — Robischon Gallery, Denver, 2022",
+      "sort_order": 2
+    },
+    {
+      "showSlug": "variaciones-chuecas",
+      "image": "/assets/installations/variaciones-chuecas-2022-3.jpg",
+      "caption": "Variaciones Chuecas — Robischon Gallery, Denver, 2022",
+      "sort_order": 3
+    },
+    {
+      "showSlug": "variaciones-chuecas",
+      "image": "/assets/installations/variaciones-chuecas-2022-4.jpg",
+      "caption": "Variaciones Chuecas — Robischon Gallery, Denver, 2022",
+      "sort_order": 4
+    },
+    {
+      "showSlug": "variaciones-chuecas",
+      "image": "/assets/installations/variaciones-chuecas-2022-5.jpg",
+      "caption": "Variaciones Chuecas — Robischon Gallery, Denver, 2022",
+      "sort_order": 5
+    },
+    {
+      "showSlug": "variaciones-chuecas",
+      "image": "/assets/installations/variaciones-chuecas-2022-6.jpg",
+      "caption": "Variaciones Chuecas — Robischon Gallery, Denver, 2022",
+      "sort_order": 6
+    },
+    {
+      "showSlug": "variaciones-chuecas",
+      "image": "/assets/installations/variaciones-chuecas-2022-7.jpg",
+      "caption": "Variaciones Chuecas — Robischon Gallery, Denver, 2022",
+      "sort_order": 7
+    },
+    {
+      "showSlug": "variaciones-chuecas",
+      "image": "/assets/installations/variaciones-chuecas-2022-8.jpg",
+      "caption": "Variaciones Chuecas — Robischon Gallery, Denver, 2022",
+      "sort_order": 8
+    },
+    {
+      "showSlug": "variaciones-chuecas",
+      "image": "/assets/installations/variaciones-chuecas-2022-9.jpg",
+      "caption": "Variaciones Chuecas — Robischon Gallery, Denver, 2022",
+      "sort_order": 9
+    },
+    {
+      "showSlug": "fluid-borders",
+      "image": "/assets/installations/fluid-borders-2021-1.jpg",
+      "caption": "Fluid Borders — Margaret Thatcher Projects, New York, 2021",
+      "sort_order": 0
+    },
+    {
+      "showSlug": "fluid-borders",
+      "image": "/assets/installations/fluid-borders-2021-2.jpg",
+      "caption": "Fluid Borders — Margaret Thatcher Projects, New York, 2021",
+      "sort_order": 1
+    },
+    {
+      "showSlug": "fluid-borders",
+      "image": "/assets/installations/fluid-borders-2021-3.jpg",
+      "caption": "Fluid Borders — Margaret Thatcher Projects, New York, 2021",
+      "sort_order": 2
+    },
+    {
+      "showSlug": "fluid-borders",
+      "image": "/assets/installations/fluid-borders-2021-4.jpg",
+      "caption": "Fluid Borders — Margaret Thatcher Projects, New York, 2021",
+      "sort_order": 3
+    },
+    {
+      "showSlug": "fluid-borders",
+      "image": "/assets/installations/fluid-borders-2021-5.jpg",
+      "caption": "Fluid Borders — Margaret Thatcher Projects, New York, 2021",
+      "sort_order": 4
+    },
+    {
+      "showSlug": "fluid-borders",
+      "image": "/assets/installations/fluid-borders-2021-6.jpg",
+      "caption": "Fluid Borders — Margaret Thatcher Projects, New York, 2021",
+      "sort_order": 5
+    },
+    {
+      "showSlug": "fluid-borders",
+      "image": "/assets/installations/fluid-borders-2021-7.jpg",
+      "caption": "Fluid Borders — Margaret Thatcher Projects, New York, 2021",
+      "sort_order": 6
+    }
+  ],
+  "press": [
+    {
+      "publication": "Robischon Gallery",
+      "year": null,
+      "quote": "Geometric and organic elements build intricate compositions that beckon the viewer to take a closer look.",
+      "image": null,
+      "sort_order": 0
+    },
+    {
+      "publication": "Fouladi Projects",
+      "year": null,
+      "quote": "A brush is never used. The dried acrylic forms become pliable building blocks — the basis of his paintings.",
+      "image": null,
+      "sort_order": 1
+    },
+    {
+      "publication": "DeWitt Cheng · East Bay Express",
+      "year": 2010,
+      "quote": "Insistently physical and overtly time-intensive — slow collaborations between maker and material.",
+      "image": null,
+      "pdfUrl": "/assets/press/east-bay-express-2010.pdf",
+      "sort_order": 2
+    },
+    {
+      "publication": "Ringling College",
+      "year": null,
+      "quote": "Paint pouring on a separate surface that, once dried, migrates to the canvas in mosaic-like tiles — invoking concepts of the masses.",
+      "image": null,
+      "sort_order": 3
+    },
+    {
+      "publication": "Arte al Límite",
+      "year": 2012,
+      "quote": "",
+      "image": "/assets/press/arte-al-limite-2012.jpg",
+      "sort_order": 4
+    },
+    {
+      "publication": "Art & Antiques — “Emerging Artists”",
+      "year": 2007,
+      "quote": "",
+      "image": "/assets/press/art-and-antiques-2007.jpg",
+      "sort_order": 5
+    },
+    {
+      "publication": "Miami University Young Painters Award",
+      "year": 2007,
+      "quote": "",
+      "image": "/assets/press/young-painters-2007.jpg",
+      "sort_order": 6
+    },
+    {
+      "publication": "Art in America — “Report from San Francisco I”",
+      "year": 2006,
+      "quote": "",
+      "image": "/assets/press/art-in-america-2006.jpg",
+      "sort_order": 7
+    },
+    {
+      "publication": "Artweek",
+      "year": 2005,
+      "quote": "",
+      "image": "/assets/press/artweek-2005.jpg",
+      "sort_order": 8
+    }
+  ],
+  "cv": [
+    {
+      "year": null,
+      "kind": "represented",
+      "title": "Robischon Gallery",
+      "venue": "Denver, CO",
+      "sort_order": 0
+    },
+    {
+      "year": 2017,
+      "kind": "commission",
+      "title": "NYU Langone Art Program & Collection",
+      "venue": "New York, NY",
+      "sort_order": 1
+    },
+    {
+      "year": 2008,
+      "kind": "award",
+      "title": "NYFA Artist Fellowship",
+      "venue": "New York Foundation for the Arts",
+      "sort_order": 2
+    },
+    {
+      "year": 2007,
+      "kind": "award",
+      "title": "William & Dorothy Yeck Award (Juror: Jerry Saltz, Village Voice)",
+      "venue": "Miami University National Young Painters Competition",
+      "sort_order": 3
+    },
+    {
+      "year": 2005,
+      "kind": "award",
+      "title": "SECA Award Nominee",
+      "venue": "San Francisco Museum of Modern Art",
+      "sort_order": 4
+    },
+    {
+      "year": 2004,
+      "kind": "award",
+      "title": "Tournesol Award & Residency Finalist",
+      "venue": "Headlands Center for the Arts, Sausalito, CA",
+      "sort_order": 5
+    },
+    {
+      "year": 2004,
+      "kind": "education",
+      "title": "MFA, Painting",
+      "venue": "San Francisco Art Institute, San Francisco, CA",
+      "sort_order": 6
+    },
+    {
+      "year": 2002,
+      "kind": "award",
+      "title": "Jurors' Award, Best of Ringling",
+      "venue": "Ringling College of Art and Design",
+      "sort_order": 7
+    },
+    {
+      "year": 2002,
+      "kind": "education",
+      "title": "BFA",
+      "venue": "Ringling College of Art and Design, Sarasota, FL",
+      "sort_order": 8
+    }
+  ],
+  "news": [],
+  "bio": {
+    "heading": "From Bogotá to a Queens studio.",
+    "paragraphs": [
+      "Omar Chacón was born in Bogotá, Colombia and moved to the United States with his family as a child. He earned a BFA from Ringling College of Art and Design and an MFA in painting from the San Francisco Art Institute. He lives and works in Queens, New York.",
+      "His signature method began with a memory: his self-taught grandfather painting small abstract dots. Those dots became colorful lozenges and discs — read as aerial views of people, mixing, multiplying, and taking over the surface. The work draws on the folk art and indigenous textiles of South America and the mestizo fusion of Latin American life.",
+      "Chacón is represented by Robischon Gallery (Denver). His work has also been shown with Margaret Thatcher Projects (New York), Fouladi Projects (San Francisco), and Brunnhofer Galerie (Linz, Austria)."
+    ],
+    "statement": "Acrylic is poured onto wax paper and left to dry into thousands of brightly colored ovals and drips — each one finding its own edge. Once dry, every shape is hand-peeled into a unique building block, then layered onto the canvas. A brush is never used.",
+    "portrait": "/assets/omar-portrait.jpg"
+  },
+  "contact": {
+    "email": "",
+    "instagram": "https://www.instagram.com/omarchaconjr/",
+    "gallery": "https://robischongallery.com/",
+    "artnet": "https://www.artnet.com/artists/omar-chac%C3%B3n/",
+    "blurb": "For studio visits, acquisitions, and exhibition inquiries."
+  },
+  "heroImages": [
+    "/assets/header-1.jpg",
+    "/assets/header-2.jpg",
+    "/assets/header-3.jpg"
+  ]
+}

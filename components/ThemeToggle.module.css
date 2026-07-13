@@ -1,0 +1,20 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition: transform 0.4s var(--ease), border-color 0.3s var(--ease),
+    background 0.3s var(--ease), color 0.3s var(--ease);
+}
+.toggle:hover {
+  transform: rotate(18deg) scale(1.05);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.toggle svg { transition: transform 0.5s var(--ease); }

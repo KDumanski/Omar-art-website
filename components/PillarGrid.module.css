@@ -1,0 +1,28 @@
+.grid { margin-top: var(--sp-5); }
+.card {
+  text-align: center;
+  padding: var(--sp-4) var(--sp-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-elev-2);
+  transition: transform 0.5s var(--ease), border-color 0.5s var(--ease), box-shadow 0.5s var(--ease);
+  display: flex; flex-direction: column; align-items: center;
+}
+.card:hover { transform: translateY(-6px); border-color: var(--line-strong); box-shadow: var(--shadow-sm); }
+
+.glyph {
+  font-size: 2.6rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: var(--sp-2);
+}
+.name {
+  font-size: var(--fs-tiny);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin-bottom: 0.6em;
+}
+.title { font-size: var(--fs-md); margin-bottom: 0.5em; }
+.body { color: var(--ink-soft); font-size: var(--fs-small); margin: 0; }

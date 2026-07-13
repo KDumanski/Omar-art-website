@@ -1,0 +1,89 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  color: var(--ink);
+  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease);
+  height: 100%;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  border-color: var(--line-strong);
+  opacity: 1;
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+.card:hover .img { transform: scale(1.06); }
+
+.badge, .price {
+  position: absolute;
+  font-family: var(--font-body);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.45em 0.85em;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+}
+.badge {
+  top: 14px; left: 14px;
+  background: rgba(14, 12, 10, 0.6);
+  color: #f4ecdd;
+  text-transform: uppercase;
+}
+.price {
+  bottom: 14px; right: 14px;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.body { padding: var(--sp-3); display: flex; flex-direction: column; gap: 0.35em; flex: 1; }
+.meta {
+  display: flex; align-items: center; gap: 0.5em; flex-wrap: wrap;
+  color: var(--accent);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.dot { color: var(--ink-faint); }
+.dates { color: var(--ink-faint); }
+
+.title {
+  font-size: var(--fs-lg);
+  margin: 0.25em 0 0;
+}
+.subtitle { color: var(--ink-soft); font-style: italic; margin: 0; font-family: var(--font-display); }
+.for { color: var(--ink-soft); font-size: var(--fs-small); margin: 0.4em 0 0.8em; }
+
+.cta {
+  margin-top: auto;
+  display: inline-flex; align-items: center; gap: 0.5em;
+  color: var(--accent);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.cta svg { transition: transform 0.3s var(--ease); }
+.card:hover .cta svg { transform: translateX(5px); }
+
+/* Featured (large) variant spans full width with side-by-side layout on desktop */
+@media (min-width: 900px) {
+  .featured { flex-direction: row; grid-column: 1 / -1; }
+  .featured .media { aspect-ratio: auto; flex: 0 0 58%; min-height: 420px; }
+  .featured .body { justify-content: center; padding: var(--sp-5); }
+  .featured .title { font-size: var(--fs-2xl); }
+}

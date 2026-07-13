@@ -1,0 +1,109 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-3);
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.35s var(--ease);
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.dialog {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--sp-5) var(--sp-4) var(--sp-4);
+  text-align: center;
+  animation: pop 0.4s var(--ease);
+}
+@keyframes pop { from { opacity: 0; transform: translateY(16px) scale(0.98); } to { opacity: 1; transform: none; } }
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: var(--ink-faint);
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: color 0.25s var(--ease), background 0.25s var(--ease);
+}
+.close:hover { color: var(--ink); background: color-mix(in srgb, var(--ink) 8%, transparent); }
+.close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 0.6em;
+}
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+  color: var(--ink);
+}
+.body {
+  color: var(--ink-soft);
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  margin: 0 auto var(--sp-3);
+  max-width: 38ch;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+}
+.input {
+  width: 100%;
+  padding: 0.85em 1em;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-strong);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: var(--fs-base);
+  font-family: inherit;
+}
+.input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.submit { width: 100%; }
+
+.fine {
+  margin: var(--sp-3) 0 0;
+  font-size: var(--fs-tiny);
+  color: var(--ink-faint);
+}
+
+/* Visually-hidden honeypot (kept focusable-off, not display:none, per Mailchimp). */
+.hp {
+  position: absolute;
+  left: -5000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.hpFrame {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0;
+  visibility: hidden;
+}
