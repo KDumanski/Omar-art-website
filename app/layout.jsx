@@ -33,11 +33,13 @@ export const viewport = {
 };
 
 // Set [data-theme] before first paint to avoid a flash of the wrong theme.
-// Light (white bg, black text — the Barbara Takenaga reference look Omar asked for) is
-// the default; honor a saved choice (key: oc-theme) if one exists.
+// Order: a saved choice wins (key: oc-theme); otherwise follow the visitor's OS
+// light/dark setting; light is the final fallback (the Barbara Takenaga
+// reference look Omar asked for) for browsers that report no preference.
 const themeScript = `(function(){try{
   var s=localStorage.getItem('oc-theme');
-  var t=(s==='light'||s==='dark')?s:'light';
+  var t=(s==='light'||s==='dark')?s
+    :(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
 }catch(e){document.documentElement.setAttribute('data-theme','light');}})();`;
 

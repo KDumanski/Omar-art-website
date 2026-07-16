@@ -5,17 +5,22 @@ import styles from './ThemeToggle.module.css';
 // Sun (light) / Moon (dark) toggle. Reads the attribute the inline ThemeScript
 // already set, so the icon is correct on first interaction without hydration flash.
 export default function ThemeToggle({ className = '' }) {
-  const [theme, setTheme] = useState('dark');
+  // Light is this site's default (see the theme script in layout.jsx), so start
+  // there — starting at 'dark' briefly rendered the wrong icon on a light page.
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
     setTheme(current);
   }, []);
 
   function toggle() {
     const next = theme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
-    try { localStorage.setItem('ft-theme', next); } catch (e) {}
+    // Must match the key layout.jsx reads. This wrote 'ft-theme' (left over from
+    // the app this was forked from) while the loader read 'oc-theme', so the
+    // visitor's choice was silently forgotten on the next page load.
+    try { localStorage.setItem('oc-theme', next); } catch (e) {}
     setTheme(next);
   }
 
