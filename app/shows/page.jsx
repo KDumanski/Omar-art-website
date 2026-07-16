@@ -18,13 +18,10 @@ export default async function ShowsPage() {
         <p className="page__eyebrow">Paintings &amp; Shows</p>
       </div>
       <div className="page__body">
-        <header className="page__head">
-          <h1 className="page__title">The work.</h1>
-          <p className="page__intro">
-            Browse <strong>by show</strong> — each exhibition with its installation views and the paintings that hung in it — or <strong>by painting</strong>, the full body of work. Open any painting to step through it up close.
-          </p>
-        </header>
-
+        {/* No heading/intro copy here by design: the reference this site follows
+            (barbaratakenaga.com) leads with artwork, not explanation. The eyebrow
+            above already names the page, and the browser's own toggle is
+            self-evident, so the paintings start at the top of the viewport. */}
         <WorkBrowser shows={shows} works={works} />
 
         {/* A working record — free text Omar pastes and formats himself */}
