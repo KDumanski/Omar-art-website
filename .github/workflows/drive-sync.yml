@@ -1,0 +1,57 @@
+name: Sync photos from Omar's Drive folder
+
+# Omar drops painting photos into the shared Drive folder "Omar Website Photos"
+# and fills in the "Omar Website Info" sheet next to them. This job pulls anything
+# new, writes it into content/site-data.json + public/uploads, and commits. That
+# push triggers the Pages deploy workflow, so the site updates itself.
+#
+# Why polling: a Drive push notification needs a public HTTPS endpoint to receive
+# the webhook, and this site is static (no server anywhere). Cron is the only
+# option. The script exits in seconds when nothing changed, so a no-op run is cheap.
+# GitHub's scheduler is best-effort and commonly runs several minutes late — a
+# tighter interval than this would buy nothing.
+on:
+  schedule:
+    - cron: '*/30 * * * *' # every 30 minutes
+  workflow_dispatch: # lets you force a sync from the Actions tab
+
+# Needed to push the synced content back to main
+permissions:
+  contents: write
+
+# Never let two syncs race on the same branch
+concurrency:
+  group: drive-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        # pillow-heif lets iPhone HEIC photos through; without it they're skipped.
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-auth google-auth-oauthlib \
+                      pillow pillow-heif
+
+      - name: Sync from Drive
+        env:
+          # OAuth token JSON, stored as a repo secret. It carries its own
+          # refresh_token + client id/secret, so it renews itself headlessly.
+          GOOGLE_TOKEN_PERSONAL_DRIVE: ${{ secrets.GOOGLE_TOKEN_PERSONAL_DRIVE }}
+          # The script writes into the repo it's running inside.
+          OMAR_APP_DIR: ${{ github.workspace }}
+          GIT_AUTHOR_NAME: omar-site-sync
+          GIT_AUTHOR_EMAIL: actions@github.com
+          GIT_COMMITTER_NAME: omar-site-sync
+          GIT_COMMITTER_EMAIL: actions@github.com
+        run: python scripts/omar_site_sync.py
